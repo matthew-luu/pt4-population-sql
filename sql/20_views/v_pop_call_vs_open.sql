@@ -4,6 +4,7 @@ CREATE VIEW
   pop.v_pop_call_vs_open AS
 SELECT
   id_player,
+  id_limit,
   /* ---------- Defender HJ (2) ---------- */
   ROUND(
     100.0 * SUM(call_vs_open) FILTER (
@@ -237,4 +238,5 @@ SELECT
 FROM
   pop.mv_pop_2bet_def_counts
 GROUP BY
-  id_player;
+  id_player,
+  id_limit;

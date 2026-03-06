@@ -12,3 +12,5 @@ DROP MATERIALIZED VIEW IF EXISTS pop.mv_pop_3bet_counts;
 DROP MATERIALIZED VIEW IF EXISTS pop.mv_pop_2bet_def_counts;
 
 DROP MATERIALIZED VIEW IF EXISTS pop.mv_pop_rfi_counts;
+
+DROP VIEW IF EXISTS pop.v_hand_stakes;

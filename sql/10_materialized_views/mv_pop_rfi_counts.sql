@@ -5,6 +5,7 @@ SELECT
   p.id_player,
   p.player_name,
   s.position AS pos,
+  hl.id_limit,
   COUNT(*) FILTER (
     WHERE
       s.flg_p_open_opp
@@ -18,9 +19,11 @@ SELECT
 FROM
   player p
   JOIN cash_hand_player_statistics s ON s.id_player = p.id_player
+  JOIN pop.v_hand_limits hl ON hl.id_hand = s.id_hand
 WHERE
   p.id_player NOT IN (-1, 0, 1)
 GROUP BY
   p.id_player,
   p.player_name,
-  s.position;
+  s.position,
+  hl.id_limit;
