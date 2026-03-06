@@ -7,6 +7,9 @@
 --Clean
 \i ops/clean.sql
 
+-- Foundational views
+\i sql/05_foundation_views/v_hand_limits.sql
+
 -- Materialized views
 \i sql/10_materialized_views/mv_pop_rfi_counts.sql
 \i sql/10_materialized_views/mv_pop_2bet_def_counts.sql

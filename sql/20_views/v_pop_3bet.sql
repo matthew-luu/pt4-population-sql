@@ -4,6 +4,7 @@ CREATE VIEW
   pop.v_pop_3bet AS
 SELECT
   id_player,
+  id_limit,
   /* ---------- Defender HJ (2) ---------- */
   ROUND(
     100.0 * SUM(threebet_cnt) FILTER (
@@ -237,4 +238,5 @@ SELECT
 FROM
   pop.mv_pop_3bet_counts
 GROUP BY
-  id_player;
+  id_player,
+  id_limit;

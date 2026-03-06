@@ -5,6 +5,7 @@ CREATE VIEW
 SELECT
   r.id_player,
   r.player_name,
+  r.id_limit,
   r.hands,
   r.rfi_utg,
   r.rfi_hj,
@@ -46,4 +47,6 @@ SELECT
 FROM
   pop.v_pop_rfi r
   LEFT JOIN pop.v_pop_call_vs_open c ON c.id_player = r.id_player
-  LEFT JOIN pop.v_pop_3bet t ON t.id_player = r.id_player;
+  AND c.id_limit = r.id_limit
+  LEFT JOIN pop.v_pop_3bet t ON t.id_player = r.id_player
+  AND t.id_limit = r.id_limit;

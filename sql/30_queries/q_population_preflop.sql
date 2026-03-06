@@ -3,18 +3,23 @@ Refresh workflow (run when you import new hands)
 ========================= */
 -- Refresh MVs (order doesn't matter here, but keep consistent)
 -- Note: CONCURRENTLY requires unique indexes; omit unless you add them.
-REFRESH MATERIALIZED VIEW public.mv_pop_rfi_counts;
+REFRESH MATERIALIZED VIEW pop.mv_pop_rfi_counts;
 
-REFRESH MATERIALIZED VIEW public.mv_pop_2bet_def_counts;
+REFRESH MATERIALIZED VIEW pop.mv_pop_2bet_def_counts;
 
 /* =========================
 Example usage
 ========================= */
 -- Full report:
--- SELECT * FROM public.v_population_preflop ORDER BY hands DESC;
+-- SELECT * FROM pop.v_population_preflop ORDER BY hands DESC;
 -- Single player:
--- SELECT * FROM public.v_population_preflop WHERE player_name = 'alex1484';
+-- SELECT * FROM pop.v_population_preflop WHERE player_name = 'alex1484';
 --Population average:
+WITH
+   vars AS (
+      SELECT
+         .02 AS stake
+   )
 SELECT
    COUNT(*) AS player_count,
    SUM(hands) AS total_hands,
@@ -264,4 +269,7 @@ SELECT
       2
    ) AS avg_3bet_bb_vs_sb
 FROM
-   pop.v_population_preflop;
+   pop.v_population_preflop p
+   JOIN public.cash_limit cl ON cl.id_limit = p.id_limit
+WHERE
+   cl.amt_bb = vars.stake

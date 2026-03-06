@@ -5,6 +5,7 @@ SELECT
   s.id_player,
   s.position AS defender_pos,
   o.position AS opener_pos,
+  hl.id_limit,
   COUNT(*) FILTER (
     WHERE
       s.amt_p_2bet_facing > 0
@@ -21,10 +22,12 @@ FROM
   AND o.flg_p_open_opp
   AND o.flg_p_first_raise
   JOIN lookup_actions la ON la.id_action = s.id_action_p
+  JOIN pop.v_hand_limits hl ON hl.id_hand = s.id_hand
 WHERE
   s.id_player NOT IN (-1, 0, 1)
   AND s.id_player <> o.id_player
 GROUP BY
   s.id_player,
   s.position,
-  o.position;
+  o.position,
+  hl.id_limit;

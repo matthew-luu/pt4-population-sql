@@ -4,6 +4,7 @@ CREATE VIEW
   pop.v_pop_rfi AS
 SELECT
   id_player,
+  id_limit,
   MAX(player_name) AS player_name,
   -- total hands for player across positions (optional)
   SUM(hands_in_pos) AS hands,
@@ -75,4 +76,5 @@ SELECT
 FROM
   pop.mv_pop_rfi_counts
 GROUP BY
-  id_player;
+  id_player,
+  id_limit;
