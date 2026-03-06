@@ -11,14 +11,15 @@
 \i sql/05_foundation_views/v_hand_limits.sql
 
 -- Materialized views
-\i sql/10_materialized_views/mv_pop_rfi_counts.sql
-\i sql/10_materialized_views/mv_pop_2bet_def_counts.sql
-\i sql/10_materialized_views/mv_pop_3bet_counts.sql
+\i sql/10_materialized_views/mv_player_rfi_counts.sql
+\i sql/10_materialized_views/mv_player_2bet_def_counts.sql
+\i sql/10_materialized_views/mv_player_3bet_counts.sql
 
 -- Views
-\i sql/20_views/v_pop_rfi.sql
-\i sql/20_views/v_pop_call_vs_open.sql
-\i sql/20_views/v_pop_3bet.sql
+\i sql/20_views/v_player_rfi.sql
+\i sql/20_views/v_player_call_vs_open.sql
+\i sql/20_views/v_player_3bet.sql
+\i sql/20_views/v_player_preflop.sql
 \i sql/20_views/v_population_preflop.sql
 
 -- Refresh

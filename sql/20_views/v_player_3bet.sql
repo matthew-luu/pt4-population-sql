@@ -1,7 +1,7 @@
-DROP VIEW IF EXISTS pop.v_pop_3bet;
+DROP VIEW IF EXISTS pop.v_player_3bet;
 
 CREATE VIEW
-  pop.v_pop_3bet AS
+  pop.v_player_3bet AS
 SELECT
   id_player,
   id_limit,
@@ -236,7 +236,7 @@ SELECT
     2
   ) AS threebet_bb_vs_sb
 FROM
-  pop.mv_pop_3bet_counts
+  pop.mv_player_3bet_counts
 GROUP BY
   id_player,
   id_limit;

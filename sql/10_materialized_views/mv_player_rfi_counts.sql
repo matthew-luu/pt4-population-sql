@@ -1,6 +1,6 @@
-DROP MATERIALIZED VIEW IF EXISTS pop.mv_pop_rfi_counts;
+DROP MATERIALIZED VIEW IF EXISTS pop.mv_player_rfi_counts;
 
-CREATE MATERIALIZED VIEW pop.mv_pop_rfi_counts AS
+CREATE MATERIALIZED VIEW pop.mv_player_rfi_counts AS
 SELECT
   p.id_player,
   p.player_name,

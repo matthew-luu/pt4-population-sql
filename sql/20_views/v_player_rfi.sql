@@ -1,7 +1,7 @@
-DROP VIEW IF EXISTS pop.v_pop_rfi;
+DROP VIEW IF EXISTS pop.v_player_rfi;
 
 CREATE VIEW
-  pop.v_pop_rfi AS
+  pop.v_player_rfi AS
 SELECT
   id_player,
   id_limit,
@@ -74,7 +74,7 @@ SELECT
     2
   ) AS rfi_sb
 FROM
-  pop.mv_pop_rfi_counts
+  pop.mv_player_rfi_counts
 GROUP BY
   id_player,
   id_limit;
