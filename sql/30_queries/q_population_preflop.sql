@@ -270,6 +270,7 @@ SELECT
    ) AS avg_3bet_bb_vs_sb
 FROM
    pop.v_population_preflop p
+   CROSS JOIN vars
    JOIN public.cash_limit cl ON cl.id_limit = p.id_limit
 WHERE
    cl.amt_bb = vars.stake
