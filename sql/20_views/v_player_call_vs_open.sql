@@ -1,7 +1,7 @@
-DROP VIEW IF EXISTS pop.v_pop_call_vs_open;
+DROP VIEW IF EXISTS pop.v_player_call_vs_open;
 
 CREATE VIEW
-  pop.v_pop_call_vs_open AS
+  pop.v_player_call_vs_open AS
 SELECT
   id_player,
   id_limit,
@@ -236,7 +236,7 @@ SELECT
     2
   ) AS call_bb_vs_sb
 FROM
-  pop.mv_pop_2bet_def_counts
+  pop.mv_player_2bet_def_counts
 GROUP BY
   id_player,
   id_limit;
