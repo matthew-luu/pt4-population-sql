@@ -5,7 +5,7 @@ CREATE VIEW
 SELECT
   id_player,
   id_limit,
-  /* ---------- Defender HJ (2) ---------- */
+  /* ---------- Threebettor HJ (2) ---------- */
   ROUND(
     100.0 * SUM(threebet_cnt) FILTER (
       WHERE
@@ -21,7 +21,7 @@ SELECT
     ),
     2
   ) AS threebet_hj_vs_utg,
-  /* ---------- Defender CO (1) ---------- */
+  /* ---------- Threebettor CO (1) ---------- */
   ROUND(
     100.0 * SUM(threebet_cnt) FILTER (
       WHERE
@@ -52,7 +52,7 @@ SELECT
     ),
     2
   ) AS threebet_co_vs_hj,
-  /* ---------- Defender BTN (0) ---------- */
+  /* ---------- Threebettor BTN (0) ---------- */
   ROUND(
     100.0 * SUM(threebet_cnt) FILTER (
       WHERE
@@ -98,7 +98,7 @@ SELECT
     ),
     2
   ) AS threebet_btn_vs_co,
-  /* ---------- Defender SB (9) ---------- */
+  /* ---------- Threebettor SB (9) ---------- */
   ROUND(
     100.0 * SUM(threebet_cnt) FILTER (
       WHERE
@@ -159,7 +159,7 @@ SELECT
     ),
     2
   ) AS threebet_sb_vs_btn,
-  /* ---------- Defender BB (8) ---------- */
+  /* ---------- Threebettor BB (8) ---------- */
   ROUND(
     100.0 * SUM(threebet_cnt) FILTER (
       WHERE
