@@ -9,6 +9,8 @@ WITH
         FROM
             pop.v_population_preflop p
             JOIN vars v ON p.id_limit = v.id_limit
+        LIMIT
+            1
     )
 SELECT
     row_label AS vs_open,
