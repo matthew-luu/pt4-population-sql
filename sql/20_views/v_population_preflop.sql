@@ -23,7 +23,7 @@ WITH
                     0
                 ),
                 2
-            ) AS rfi_utg,
+            ) AS rfi_lj,
             ROUND(
                 100.0 * SUM(r.rfi) FILTER (
                     WHERE
@@ -102,7 +102,7 @@ WITH
                     0
                 ),
                 2
-            ) AS call_hj_vs_utg,
+            ) AS call_hj_vs_lj,
             ROUND(
                 100.0 * SUM(c.call_vs_open) FILTER (
                     WHERE
@@ -117,7 +117,7 @@ WITH
                     0
                 ),
                 2
-            ) AS call_co_vs_utg,
+            ) AS call_co_vs_lj,
             ROUND(
                 100.0 * SUM(c.call_vs_open) FILTER (
                     WHERE
@@ -147,7 +147,7 @@ WITH
                     0
                 ),
                 2
-            ) AS call_btn_vs_utg,
+            ) AS call_btn_vs_lj,
             ROUND(
                 100.0 * SUM(c.call_vs_open) FILTER (
                     WHERE
@@ -192,7 +192,7 @@ WITH
                     0
                 ),
                 2
-            ) AS call_sb_vs_utg,
+            ) AS call_sb_vs_lj,
             ROUND(
                 100.0 * SUM(c.call_vs_open) FILTER (
                     WHERE
@@ -252,7 +252,7 @@ WITH
                     0
                 ),
                 2
-            ) AS call_bb_vs_utg,
+            ) AS call_bb_vs_lj,
             ROUND(
                 100.0 * SUM(c.call_vs_open) FILTER (
                     WHERE
@@ -335,7 +335,7 @@ WITH
                     0
                 ),
                 2
-            ) AS threebet_hj_vs_utg,
+            ) AS threebet_hj_vs_lj,
             ROUND(
                 100.0 * SUM(t.threebet_cnt) FILTER (
                     WHERE
@@ -350,7 +350,7 @@ WITH
                     0
                 ),
                 2
-            ) AS threebet_co_vs_utg,
+            ) AS threebet_co_vs_lj,
             ROUND(
                 100.0 * SUM(t.threebet_cnt) FILTER (
                     WHERE
@@ -380,7 +380,7 @@ WITH
                     0
                 ),
                 2
-            ) AS threebet_btn_vs_utg,
+            ) AS threebet_btn_vs_lj,
             ROUND(
                 100.0 * SUM(t.threebet_cnt) FILTER (
                     WHERE
@@ -425,7 +425,7 @@ WITH
                     0
                 ),
                 2
-            ) AS threebet_sb_vs_utg,
+            ) AS threebet_sb_vs_lj,
             ROUND(
                 100.0 * SUM(t.threebet_cnt) FILTER (
                     WHERE
@@ -485,7 +485,7 @@ WITH
                     0
                 ),
                 2
-            ) AS threebet_bb_vs_utg,
+            ) AS threebet_bb_vs_lj,
             ROUND(
                 100.0 * SUM(t.threebet_cnt) FILTER (
                     WHERE
@@ -555,21 +555,21 @@ WITH
         SELECT
             COALESCE(c.id_limit, t.id_limit) AS id_limit,
             ROUND(
-                100.0 - COALESCE(t.threebet_hj_vs_utg, 0) - COALESCE(c.call_hj_vs_utg, 0),
+                100.0 - COALESCE(t.threebet_hj_vs_lj, 0) - COALESCE(c.call_hj_vs_lj, 0),
                 2
-            ) AS fold_hj_vs_utg,
+            ) AS fold_hj_vs_lj,
             ROUND(
-                100.0 - COALESCE(t.threebet_co_vs_utg, 0) - COALESCE(c.call_co_vs_utg, 0),
+                100.0 - COALESCE(t.threebet_co_vs_lj, 0) - COALESCE(c.call_co_vs_lj, 0),
                 2
-            ) AS fold_co_vs_utg,
+            ) AS fold_co_vs_lj,
             ROUND(
                 100.0 - COALESCE(t.threebet_co_vs_hj, 0) - COALESCE(c.call_co_vs_hj, 0),
                 2
             ) AS fold_co_vs_hj,
             ROUND(
-                100.0 - COALESCE(t.threebet_btn_vs_utg, 0) - COALESCE(c.call_btn_vs_utg, 0),
+                100.0 - COALESCE(t.threebet_btn_vs_lj, 0) - COALESCE(c.call_btn_vs_lj, 0),
                 2
-            ) AS fold_btn_vs_utg,
+            ) AS fold_btn_vs_lj,
             ROUND(
                 100.0 - COALESCE(t.threebet_btn_vs_hj, 0) - COALESCE(c.call_btn_vs_hj, 0),
                 2
@@ -579,9 +579,9 @@ WITH
                 2
             ) AS fold_btn_vs_co,
             ROUND(
-                100.0 - COALESCE(t.threebet_sb_vs_utg, 0) - COALESCE(c.call_sb_vs_utg, 0),
+                100.0 - COALESCE(t.threebet_sb_vs_lj, 0) - COALESCE(c.call_sb_vs_lj, 0),
                 2
-            ) AS fold_sb_vs_utg,
+            ) AS fold_sb_vs_lj,
             ROUND(
                 100.0 - COALESCE(t.threebet_sb_vs_hj, 0) - COALESCE(c.call_sb_vs_hj, 0),
                 2
@@ -595,9 +595,9 @@ WITH
                 2
             ) AS fold_sb_vs_btn,
             ROUND(
-                100.0 - COALESCE(t.threebet_bb_vs_utg, 0) - COALESCE(c.call_bb_vs_utg, 0),
+                100.0 - COALESCE(t.threebet_bb_vs_lj, 0) - COALESCE(c.call_bb_vs_lj, 0),
                 2
-            ) AS fold_bb_vs_utg,
+            ) AS fold_bb_vs_lj,
             ROUND(
                 100.0 - COALESCE(t.threebet_bb_vs_hj, 0) - COALESCE(c.call_bb_vs_hj, 0),
                 2
@@ -625,52 +625,52 @@ SELECT
     r.amt_bb,
     r.player_count,
     r.total_hands,
-    r.rfi_utg,
+    r.rfi_lj,
     r.rfi_hj,
     r.rfi_co,
     r.rfi_btn,
     r.rfi_sb,
-    c.call_hj_vs_utg,
-    c.call_co_vs_utg,
+    c.call_hj_vs_lj,
+    c.call_co_vs_lj,
     c.call_co_vs_hj,
-    c.call_btn_vs_utg,
+    c.call_btn_vs_lj,
     c.call_btn_vs_hj,
     c.call_btn_vs_co,
-    c.call_sb_vs_utg,
+    c.call_sb_vs_lj,
     c.call_sb_vs_hj,
     c.call_sb_vs_co,
     c.call_sb_vs_btn,
-    c.call_bb_vs_utg,
+    c.call_bb_vs_lj,
     c.call_bb_vs_hj,
     c.call_bb_vs_co,
     c.call_bb_vs_btn,
     c.call_bb_vs_sb,
-    t.threebet_hj_vs_utg,
-    t.threebet_co_vs_utg,
+    t.threebet_hj_vs_lj,
+    t.threebet_co_vs_lj,
     t.threebet_co_vs_hj,
-    t.threebet_btn_vs_utg,
+    t.threebet_btn_vs_lj,
     t.threebet_btn_vs_hj,
     t.threebet_btn_vs_co,
-    t.threebet_sb_vs_utg,
+    t.threebet_sb_vs_lj,
     t.threebet_sb_vs_hj,
     t.threebet_sb_vs_co,
     t.threebet_sb_vs_btn,
-    t.threebet_bb_vs_utg,
+    t.threebet_bb_vs_lj,
     t.threebet_bb_vs_hj,
     t.threebet_bb_vs_co,
     t.threebet_bb_vs_btn,
     t.threebet_bb_vs_sb,
-    f.fold_hj_vs_utg,
-    f.fold_co_vs_utg,
+    f.fold_hj_vs_lj,
+    f.fold_co_vs_lj,
     f.fold_co_vs_hj,
-    f.fold_btn_vs_utg,
+    f.fold_btn_vs_lj,
     f.fold_btn_vs_hj,
     f.fold_btn_vs_co,
-    f.fold_sb_vs_utg,
+    f.fold_sb_vs_lj,
     f.fold_sb_vs_hj,
     f.fold_sb_vs_co,
     f.fold_sb_vs_btn,
-    f.fold_bb_vs_utg,
+    f.fold_bb_vs_lj,
     f.fold_bb_vs_hj,
     f.fold_bb_vs_co,
     f.fold_bb_vs_btn,

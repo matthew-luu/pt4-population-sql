@@ -174,7 +174,7 @@ SELECT
       0
     ),
     2
-  ) AS fourbet_utg_vs_bb,
+  ) AS fourbet_lj_vs_bb,
   ROUND(
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
@@ -189,7 +189,7 @@ SELECT
       0
     ),
     2
-  ) AS fourbet_utg_vs_sb,
+  ) AS fourbet_lj_vs_sb,
   ROUND(
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
@@ -204,7 +204,7 @@ SELECT
       0
     ),
     2
-  ) AS fourbet_utg_vs_btn,
+  ) AS fourbet_lj_vs_btn,
   ROUND(
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
@@ -219,7 +219,7 @@ SELECT
       0
     ),
     2
-  ) AS fourbet_utg_vs_co,
+  ) AS fourbet_lj_vs_co,
   ROUND(
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
@@ -234,7 +234,7 @@ SELECT
       0
     ),
     2
-  ) AS fourbet_utg_vs_hj
+  ) AS fourbet_lj_vs_hj
 FROM
   pop.mv_player_4bet_vs_3bet_counts
 GROUP BY

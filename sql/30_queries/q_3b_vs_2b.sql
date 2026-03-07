@@ -1,6 +1,6 @@
 WITH vars AS (
     SELECT 
-        0 AS open_pos,      -- EP (UTG)
+        0 AS open_pos,      -- EP (lj)
         9 AS threebet_pos   -- BTN
 )
 

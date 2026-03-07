@@ -20,7 +20,7 @@ SELECT
       0
     ),
     2
-  ) AS threebet_hj_vs_utg,
+  ) AS threebet_hj_vs_lj,
   /* ---------- Threebettor CO (1) ---------- */
   ROUND(
     100.0 * SUM(threebet_cnt) FILTER (
@@ -36,7 +36,7 @@ SELECT
       0
     ),
     2
-  ) AS threebet_co_vs_utg,
+  ) AS threebet_co_vs_lj,
   ROUND(
     100.0 * SUM(threebet_cnt) FILTER (
       WHERE
@@ -67,7 +67,7 @@ SELECT
       0
     ),
     2
-  ) AS threebet_btn_vs_utg,
+  ) AS threebet_btn_vs_lj,
   ROUND(
     100.0 * SUM(threebet_cnt) FILTER (
       WHERE
@@ -113,7 +113,7 @@ SELECT
       0
     ),
     2
-  ) AS threebet_sb_vs_utg,
+  ) AS threebet_sb_vs_lj,
   ROUND(
     100.0 * SUM(threebet_cnt) FILTER (
       WHERE
@@ -174,7 +174,7 @@ SELECT
       0
     ),
     2
-  ) AS threebet_bb_vs_utg,
+  ) AS threebet_bb_vs_lj,
   ROUND(
     100.0 * SUM(threebet_cnt) FILTER (
       WHERE

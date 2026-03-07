@@ -20,7 +20,7 @@ SELECT
       0
     ),
     2
-  ) AS rfi_utg,
+  ) AS rfi_lj,
   ROUND(
     100.0 * SUM(rfi) FILTER (
       WHERE
