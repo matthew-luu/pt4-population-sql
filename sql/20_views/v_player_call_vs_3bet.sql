@@ -219,7 +219,7 @@ SELECT
             0
         ),
         2
-    ) AS call_3bet_utg_vs_co,
+    ) AS call_3bet_lj_vs_co,
     ROUND(
         100.0 * SUM(call_vs_3bet) FILTER (
             WHERE
