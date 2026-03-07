@@ -9,8 +9,6 @@ WITH
         FROM
             pop.v_population_preflop p
             JOIN vars v ON p.id_limit = v.id_limit
-        LIMIT
-            1
     )
 SELECT
     row_label AS vs_open,
@@ -26,11 +24,11 @@ FROM
             1 AS sort_order,
             'EP' AS row_label,
             NULL AS ep,
-            threebet_hj_vs_utg AS mp,
-            threebet_co_vs_utg AS co,
-            threebet_btn_vs_utg AS btn,
-            threebet_sb_vs_utg AS sb,
-            threebet_bb_vs_utg AS bb
+            fold_hj_vs_utg AS mp,
+            fold_co_vs_utg AS co,
+            fold_btn_vs_utg AS btn,
+            fold_sb_vs_utg AS sb,
+            fold_bb_vs_utg AS bb
         FROM
             base
         UNION ALL
@@ -39,10 +37,10 @@ FROM
             'MP',
             NULL,
             NULL,
-            threebet_co_vs_hj,
-            threebet_btn_vs_hj,
-            threebet_sb_vs_hj,
-            threebet_bb_vs_hj
+            fold_co_vs_hj,
+            fold_btn_vs_hj,
+            fold_sb_vs_hj,
+            fold_bb_vs_hj
         FROM
             base
         UNION ALL
@@ -52,9 +50,9 @@ FROM
             NULL,
             NULL,
             NULL,
-            threebet_btn_vs_co,
-            threebet_sb_vs_co,
-            threebet_bb_vs_co
+            fold_btn_vs_co,
+            fold_sb_vs_co,
+            fold_bb_vs_co
         FROM
             base
         UNION ALL
@@ -65,8 +63,8 @@ FROM
             NULL,
             NULL,
             NULL,
-            threebet_sb_vs_btn,
-            threebet_bb_vs_btn
+            fold_sb_vs_btn,
+            fold_bb_vs_btn
         FROM
             base
         UNION ALL
@@ -78,7 +76,7 @@ FROM
             NULL,
             NULL,
             NULL,
-            threebet_bb_vs_sb
+            fold_bb_vs_sb
         FROM
             base
     ) x

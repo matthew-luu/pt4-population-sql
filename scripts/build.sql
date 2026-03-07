@@ -12,13 +12,14 @@
 
 -- Materialized views
 \i sql/10_materialized_views/mv_player_rfi_counts.sql
-\i sql/10_materialized_views/mv_player_2bet_def_counts.sql
-\i sql/10_materialized_views/mv_player_3bet_counts.sql
+\i sql/10_materialized_views/mv_player_call_vs_open_counts.sql
+\i sql/10_materialized_views/mv_player_3bet_vs_open_counts.sql
 
 -- Views
 \i sql/20_views/v_player_rfi.sql
 \i sql/20_views/v_player_call_vs_open.sql
-\i sql/20_views/v_player_3bet.sql
+\i sql/20_views/v_player_3bet_vs_open.sql
+\i sql/20_views/v_player_fold_vs_open.sql
 \i sql/20_views/v_player_preflop.sql
 \i sql/20_views/v_population_preflop.sql
 

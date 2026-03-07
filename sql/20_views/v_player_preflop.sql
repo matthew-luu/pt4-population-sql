@@ -48,5 +48,5 @@ FROM
   pop.v_player_rfi r
   LEFT JOIN pop.v_player_call_vs_open c ON c.id_player = r.id_player
   AND c.id_limit = r.id_limit
-  LEFT JOIN pop.v_player_3bet t ON t.id_player = r.id_player
+  LEFT JOIN pop.v_player_3bet_vs_open t ON t.id_player = r.id_player
   AND t.id_limit = r.id_limit;

@@ -314,7 +314,7 @@ WITH
                 2
             ) AS call_bb_vs_sb
         FROM
-            pop.mv_player_2bet_def_counts c
+            pop.mv_player_call_vs_open_counts c
         GROUP BY
             c.id_limit
     ),
@@ -547,9 +547,76 @@ WITH
                 2
             ) AS threebet_bb_vs_sb
         FROM
-            pop.mv_player_3bet_counts t
+            pop.mv_player_3bet_vs_open_counts t
         GROUP BY
             t.id_limit
+    ),
+    fold_vs_open AS (
+        SELECT
+            COALESCE(c.id_limit, t.id_limit) AS id_limit,
+            ROUND(
+                100.0 - COALESCE(t.threebet_hj_vs_utg, 0) - COALESCE(c.call_hj_vs_utg, 0),
+                2
+            ) AS fold_hj_vs_utg,
+            ROUND(
+                100.0 - COALESCE(t.threebet_co_vs_utg, 0) - COALESCE(c.call_co_vs_utg, 0),
+                2
+            ) AS fold_co_vs_utg,
+            ROUND(
+                100.0 - COALESCE(t.threebet_co_vs_hj, 0) - COALESCE(c.call_co_vs_hj, 0),
+                2
+            ) AS fold_co_vs_hj,
+            ROUND(
+                100.0 - COALESCE(t.threebet_btn_vs_utg, 0) - COALESCE(c.call_btn_vs_utg, 0),
+                2
+            ) AS fold_btn_vs_utg,
+            ROUND(
+                100.0 - COALESCE(t.threebet_btn_vs_hj, 0) - COALESCE(c.call_btn_vs_hj, 0),
+                2
+            ) AS fold_btn_vs_hj,
+            ROUND(
+                100.0 - COALESCE(t.threebet_btn_vs_co, 0) - COALESCE(c.call_btn_vs_co, 0),
+                2
+            ) AS fold_btn_vs_co,
+            ROUND(
+                100.0 - COALESCE(t.threebet_sb_vs_utg, 0) - COALESCE(c.call_sb_vs_utg, 0),
+                2
+            ) AS fold_sb_vs_utg,
+            ROUND(
+                100.0 - COALESCE(t.threebet_sb_vs_hj, 0) - COALESCE(c.call_sb_vs_hj, 0),
+                2
+            ) AS fold_sb_vs_hj,
+            ROUND(
+                100.0 - COALESCE(t.threebet_sb_vs_co, 0) - COALESCE(c.call_sb_vs_co, 0),
+                2
+            ) AS fold_sb_vs_co,
+            ROUND(
+                100.0 - COALESCE(t.threebet_sb_vs_btn, 0) - COALESCE(c.call_sb_vs_btn, 0),
+                2
+            ) AS fold_sb_vs_btn,
+            ROUND(
+                100.0 - COALESCE(t.threebet_bb_vs_utg, 0) - COALESCE(c.call_bb_vs_utg, 0),
+                2
+            ) AS fold_bb_vs_utg,
+            ROUND(
+                100.0 - COALESCE(t.threebet_bb_vs_hj, 0) - COALESCE(c.call_bb_vs_hj, 0),
+                2
+            ) AS fold_bb_vs_hj,
+            ROUND(
+                100.0 - COALESCE(t.threebet_bb_vs_co, 0) - COALESCE(c.call_bb_vs_co, 0),
+                2
+            ) AS fold_bb_vs_co,
+            ROUND(
+                100.0 - COALESCE(t.threebet_bb_vs_btn, 0) - COALESCE(c.call_bb_vs_btn, 0),
+                2
+            ) AS fold_bb_vs_btn,
+            ROUND(
+                100.0 - COALESCE(t.threebet_bb_vs_sb, 0) - COALESCE(c.call_bb_vs_sb, 0),
+                2
+            ) AS fold_bb_vs_sb
+        FROM
+            call_vs_open c
+            FULL OUTER JOIN threebet t ON t.id_limit = c.id_limit
     )
 SELECT
     r.id_limit,
@@ -592,8 +659,24 @@ SELECT
     t.threebet_bb_vs_hj,
     t.threebet_bb_vs_co,
     t.threebet_bb_vs_btn,
-    t.threebet_bb_vs_sb
+    t.threebet_bb_vs_sb,
+    f.fold_hj_vs_utg,
+    f.fold_co_vs_utg,
+    f.fold_co_vs_hj,
+    f.fold_btn_vs_utg,
+    f.fold_btn_vs_hj,
+    f.fold_btn_vs_co,
+    f.fold_sb_vs_utg,
+    f.fold_sb_vs_hj,
+    f.fold_sb_vs_co,
+    f.fold_sb_vs_btn,
+    f.fold_bb_vs_utg,
+    f.fold_bb_vs_hj,
+    f.fold_bb_vs_co,
+    f.fold_bb_vs_btn,
+    f.fold_bb_vs_sb
 FROM
     rfi r
     LEFT JOIN call_vs_open c ON c.id_limit = r.id_limit
-    LEFT JOIN threebet t ON t.id_limit = r.id_limit;
+    LEFT JOIN threebet t ON t.id_limit = r.id_limit
+    LEFT JOIN fold_vs_open f ON f.id_limit = r.id_limit;

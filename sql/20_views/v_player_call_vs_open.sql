@@ -236,7 +236,7 @@ SELECT
     2
   ) AS call_bb_vs_sb
 FROM
-  pop.mv_player_2bet_def_counts
+  pop.mv_player_call_vs_open_counts
 GROUP BY
   id_player,
   id_limit;
