@@ -12,4 +12,9 @@ if (-not (Get-Command psql -ErrorAction SilentlyContinue)) {
 
 Write-Host "Building database objects..."
 
-psql -h $DbHost -U $DbUser -d $Db -f scripts/build.sql -v ON_ERROR_STOP=1
+& psql `
+  -h "$DbHost" `
+  -U "$DbUser" `
+  -d "$Db" `
+  -f "scripts/build.sql" `
+  -v ON_ERROR_STOP=1

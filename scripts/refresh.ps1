@@ -1,7 +1,12 @@
 param(
-  [string]$Db = "PokerTracker4",
-  [string]$Host = "localhost",
+  [string]$Db = "PT4 DB",
+  [string]$DbHost = "localhost",
   [string]$User = "postgres"
 )
 
-psql -h $Host -U $User -d $Db -f scripts/refresh.sql -v ON_ERROR_STOP=1
+& psql `
+  -h $DbHost `
+  -U $User `
+  -d $Db `
+  -f "scripts/refresh.sql" `
+  -v ON_ERROR_STOP=1
