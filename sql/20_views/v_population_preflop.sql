@@ -620,232 +620,232 @@ WITH
     ),
     fourbet_vs_3bet AS (
         SELECT
-        fb.id_limit,
-        ROUND(
-            100.0 * SUM(fb.fourbet_cnt) FILTER (
-                WHERE
-                    fb.fourbettor_pos = 3
-                    AND fb.threebettor_pos = 2
-            ) / NULLIF(
-                SUM(fb.fourbet_opp) FILTER (
+            fb.id_limit,
+            ROUND(
+                100.0 * SUM(fb.fourbet_cnt) FILTER (
                     WHERE
                         fb.fourbettor_pos = 3
                         AND fb.threebettor_pos = 2
+                ) / NULLIF(
+                    SUM(fb.fourbet_opp) FILTER (
+                        WHERE
+                            fb.fourbettor_pos = 3
+                            AND fb.threebettor_pos = 2
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS fourbet_lj_vs_hj,
-        ROUND(
-            100.0 * SUM(fb.fourbet_cnt) FILTER (
-                WHERE
-                    fb.fourbettor_pos = 3
-                    AND fb.threebettor_pos = 1
-            ) / NULLIF(
-                SUM(fb.fourbet_opp) FILTER (
+                2
+            ) AS fourbet_lj_vs_hj,
+            ROUND(
+                100.0 * SUM(fb.fourbet_cnt) FILTER (
                     WHERE
                         fb.fourbettor_pos = 3
                         AND fb.threebettor_pos = 1
+                ) / NULLIF(
+                    SUM(fb.fourbet_opp) FILTER (
+                        WHERE
+                            fb.fourbettor_pos = 3
+                            AND fb.threebettor_pos = 1
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS fourbet_lj_vs_co,
-        ROUND(
-            100.0 * SUM(fb.fourbet_cnt) FILTER (
-                WHERE
-                    fb.fourbettor_pos = 3
-                    AND fb.threebettor_pos = 0
-            ) / NULLIF(
-                SUM(fb.fourbet_opp) FILTER (
+                2
+            ) AS fourbet_lj_vs_co,
+            ROUND(
+                100.0 * SUM(fb.fourbet_cnt) FILTER (
                     WHERE
                         fb.fourbettor_pos = 3
                         AND fb.threebettor_pos = 0
+                ) / NULLIF(
+                    SUM(fb.fourbet_opp) FILTER (
+                        WHERE
+                            fb.fourbettor_pos = 3
+                            AND fb.threebettor_pos = 0
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS fourbet_lj_vs_btn,
-        ROUND(
-            100.0 * SUM(fb.fourbet_cnt) FILTER (
-                WHERE
-                    fb.fourbettor_pos = 3
-                    AND fb.threebettor_pos = 9
-            ) / NULLIF(
-                SUM(fb.fourbet_opp) FILTER (
+                2
+            ) AS fourbet_lj_vs_btn,
+            ROUND(
+                100.0 * SUM(fb.fourbet_cnt) FILTER (
                     WHERE
                         fb.fourbettor_pos = 3
                         AND fb.threebettor_pos = 9
+                ) / NULLIF(
+                    SUM(fb.fourbet_opp) FILTER (
+                        WHERE
+                            fb.fourbettor_pos = 3
+                            AND fb.threebettor_pos = 9
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS fourbet_lj_vs_sb,
-        ROUND(
-            100.0 * SUM(fb.fourbet_cnt) FILTER (
-                WHERE
-                    fb.fourbettor_pos = 3
-                    AND fb.threebettor_pos = 8
-            ) / NULLIF(
-                SUM(fb.fourbet_opp) FILTER (
+                2
+            ) AS fourbet_lj_vs_sb,
+            ROUND(
+                100.0 * SUM(fb.fourbet_cnt) FILTER (
                     WHERE
                         fb.fourbettor_pos = 3
                         AND fb.threebettor_pos = 8
+                ) / NULLIF(
+                    SUM(fb.fourbet_opp) FILTER (
+                        WHERE
+                            fb.fourbettor_pos = 3
+                            AND fb.threebettor_pos = 8
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS fourbet_lj_vs_bb,
-        ROUND(
-            100.0 * SUM(fb.fourbet_cnt) FILTER (
-                WHERE
-                    fb.fourbettor_pos = 2
-                    AND fb.threebettor_pos = 1
-            ) / NULLIF(
-                SUM(fb.fourbet_opp) FILTER (
+                2
+            ) AS fourbet_lj_vs_bb,
+            ROUND(
+                100.0 * SUM(fb.fourbet_cnt) FILTER (
                     WHERE
                         fb.fourbettor_pos = 2
                         AND fb.threebettor_pos = 1
+                ) / NULLIF(
+                    SUM(fb.fourbet_opp) FILTER (
+                        WHERE
+                            fb.fourbettor_pos = 2
+                            AND fb.threebettor_pos = 1
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS fourbet_hj_vs_co,
-        ROUND(
-            100.0 * SUM(fb.fourbet_cnt) FILTER (
-                WHERE
-                    fb.fourbettor_pos = 2
-                    AND fb.threebettor_pos = 0
-            ) / NULLIF(
-                SUM(fb.fourbet_opp) FILTER (
+                2
+            ) AS fourbet_hj_vs_co,
+            ROUND(
+                100.0 * SUM(fb.fourbet_cnt) FILTER (
                     WHERE
                         fb.fourbettor_pos = 2
                         AND fb.threebettor_pos = 0
+                ) / NULLIF(
+                    SUM(fb.fourbet_opp) FILTER (
+                        WHERE
+                            fb.fourbettor_pos = 2
+                            AND fb.threebettor_pos = 0
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS fourbet_hj_vs_btn,
-        ROUND(
-            100.0 * SUM(fb.fourbet_cnt) FILTER (
-                WHERE
-                    fb.fourbettor_pos = 2
-                    AND fb.threebettor_pos = 9
-            ) / NULLIF(
-                SUM(fb.fourbet_opp) FILTER (
+                2
+            ) AS fourbet_hj_vs_btn,
+            ROUND(
+                100.0 * SUM(fb.fourbet_cnt) FILTER (
                     WHERE
                         fb.fourbettor_pos = 2
                         AND fb.threebettor_pos = 9
+                ) / NULLIF(
+                    SUM(fb.fourbet_opp) FILTER (
+                        WHERE
+                            fb.fourbettor_pos = 2
+                            AND fb.threebettor_pos = 9
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS fourbet_hj_vs_sb,
-        ROUND(
-            100.0 * SUM(fb.fourbet_cnt) FILTER (
-                WHERE
-                    fb.fourbettor_pos = 2
-                    AND fb.threebettor_pos = 8
-            ) / NULLIF(
-                SUM(fb.fourbet_opp) FILTER (
+                2
+            ) AS fourbet_hj_vs_sb,
+            ROUND(
+                100.0 * SUM(fb.fourbet_cnt) FILTER (
                     WHERE
                         fb.fourbettor_pos = 2
                         AND fb.threebettor_pos = 8
+                ) / NULLIF(
+                    SUM(fb.fourbet_opp) FILTER (
+                        WHERE
+                            fb.fourbettor_pos = 2
+                            AND fb.threebettor_pos = 8
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS fourbet_hj_vs_bb,
-        ROUND(
-            100.0 * SUM(fb.fourbet_cnt) FILTER (
-                WHERE
-                    fb.fourbettor_pos = 1
-                    AND fb.threebettor_pos = 0
-            ) / NULLIF(
-                SUM(fb.fourbet_opp) FILTER (
+                2
+            ) AS fourbet_hj_vs_bb,
+            ROUND(
+                100.0 * SUM(fb.fourbet_cnt) FILTER (
                     WHERE
                         fb.fourbettor_pos = 1
                         AND fb.threebettor_pos = 0
+                ) / NULLIF(
+                    SUM(fb.fourbet_opp) FILTER (
+                        WHERE
+                            fb.fourbettor_pos = 1
+                            AND fb.threebettor_pos = 0
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS fourbet_co_vs_btn,
-        ROUND(
-            100.0 * SUM(fb.fourbet_cnt) FILTER (
-                WHERE
-                    fb.fourbettor_pos = 1
-                    AND fb.threebettor_pos = 9
-            ) / NULLIF(
-                SUM(fb.fourbet_opp) FILTER (
+                2
+            ) AS fourbet_co_vs_btn,
+            ROUND(
+                100.0 * SUM(fb.fourbet_cnt) FILTER (
                     WHERE
                         fb.fourbettor_pos = 1
                         AND fb.threebettor_pos = 9
+                ) / NULLIF(
+                    SUM(fb.fourbet_opp) FILTER (
+                        WHERE
+                            fb.fourbettor_pos = 1
+                            AND fb.threebettor_pos = 9
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS fourbet_co_vs_sb,
-        ROUND(
-            100.0 * SUM(fb.fourbet_cnt) FILTER (
-                WHERE
-                    fb.fourbettor_pos = 1
-                    AND fb.threebettor_pos = 8
-            ) / NULLIF(
-                SUM(fb.fourbet_opp) FILTER (
+                2
+            ) AS fourbet_co_vs_sb,
+            ROUND(
+                100.0 * SUM(fb.fourbet_cnt) FILTER (
                     WHERE
                         fb.fourbettor_pos = 1
                         AND fb.threebettor_pos = 8
+                ) / NULLIF(
+                    SUM(fb.fourbet_opp) FILTER (
+                        WHERE
+                            fb.fourbettor_pos = 1
+                            AND fb.threebettor_pos = 8
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS fourbet_co_vs_bb,
-        ROUND(
-            100.0 * SUM(fb.fourbet_cnt) FILTER (
-                WHERE
-                    fb.fourbettor_pos = 0
-                    AND fb.threebettor_pos = 9
-            ) / NULLIF(
-                SUM(fb.fourbet_opp) FILTER (
+                2
+            ) AS fourbet_co_vs_bb,
+            ROUND(
+                100.0 * SUM(fb.fourbet_cnt) FILTER (
                     WHERE
                         fb.fourbettor_pos = 0
                         AND fb.threebettor_pos = 9
+                ) / NULLIF(
+                    SUM(fb.fourbet_opp) FILTER (
+                        WHERE
+                            fb.fourbettor_pos = 0
+                            AND fb.threebettor_pos = 9
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS fourbet_btn_vs_sb,
-        ROUND(
-            100.0 * SUM(fb.fourbet_cnt) FILTER (
-                WHERE
-                    fb.fourbettor_pos = 0
-                    AND fb.threebettor_pos = 8
-            ) / NULLIF(
-                SUM(fb.fourbet_opp) FILTER (
+                2
+            ) AS fourbet_btn_vs_sb,
+            ROUND(
+                100.0 * SUM(fb.fourbet_cnt) FILTER (
                     WHERE
                         fb.fourbettor_pos = 0
                         AND fb.threebettor_pos = 8
+                ) / NULLIF(
+                    SUM(fb.fourbet_opp) FILTER (
+                        WHERE
+                            fb.fourbettor_pos = 0
+                            AND fb.threebettor_pos = 8
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS fourbet_btn_vs_bb,
-        ROUND(
-            100.0 * SUM(fb.fourbet_cnt) FILTER (
-                WHERE
-                    fb.fourbettor_pos = 9
-                    AND fb.threebettor_pos = 8
-            ) / NULLIF(
-                SUM(fb.fourbet_opp) FILTER (
+                2
+            ) AS fourbet_btn_vs_bb,
+            ROUND(
+                100.0 * SUM(fb.fourbet_cnt) FILTER (
                     WHERE
                         fb.fourbettor_pos = 9
                         AND fb.threebettor_pos = 8
+                ) / NULLIF(
+                    SUM(fb.fourbet_opp) FILTER (
+                        WHERE
+                            fb.fourbettor_pos = 9
+                            AND fb.threebettor_pos = 8
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS fourbet_sb_vs_bb
+                2
+            ) AS fourbet_sb_vs_bb
         FROM
             pop.mv_player_4bet_vs_3bet_counts fb
         GROUP BY
@@ -853,232 +853,232 @@ WITH
     ),
     call_vs_3bet AS (
         SELECT
-        cvt.id_limit,
-        ROUND(
-            100.0 * SUM(cvt.call_vs_3bet) FILTER (
-                WHERE
-                    cvt.caller_pos = 3
-                    AND cvt.threebettor_pos = 2
-            ) / NULLIF(
-                SUM(cvt.call_opp) FILTER (
+            cvt.id_limit,
+            ROUND(
+                100.0 * SUM(cvt.call_vs_3bet) FILTER (
                     WHERE
                         cvt.caller_pos = 3
                         AND cvt.threebettor_pos = 2
+                ) / NULLIF(
+                    SUM(cvt.call_opp) FILTER (
+                        WHERE
+                            cvt.caller_pos = 3
+                            AND cvt.threebettor_pos = 2
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS call_lj_vs_3bet_hj,
-        ROUND(
-            100.0 * SUM(cvt.call_vs_3bet) FILTER (
-                WHERE
-                    cvt.caller_pos = 3
-                    AND cvt.threebettor_pos = 1
-            ) / NULLIF(
-                SUM(cvt.call_opp) FILTER (
+                2
+            ) AS call_lj_vs_3bet_hj,
+            ROUND(
+                100.0 * SUM(cvt.call_vs_3bet) FILTER (
                     WHERE
                         cvt.caller_pos = 3
                         AND cvt.threebettor_pos = 1
+                ) / NULLIF(
+                    SUM(cvt.call_opp) FILTER (
+                        WHERE
+                            cvt.caller_pos = 3
+                            AND cvt.threebettor_pos = 1
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS call_lj_vs_3bet_co,
-        ROUND(
-            100.0 * SUM(cvt.call_vs_3bet) FILTER (
-                WHERE
-                    cvt.caller_pos = 3
-                    AND cvt.threebettor_pos = 0
-            ) / NULLIF(
-                SUM(cvt.call_opp) FILTER (
+                2
+            ) AS call_lj_vs_3bet_co,
+            ROUND(
+                100.0 * SUM(cvt.call_vs_3bet) FILTER (
                     WHERE
                         cvt.caller_pos = 3
                         AND cvt.threebettor_pos = 0
+                ) / NULLIF(
+                    SUM(cvt.call_opp) FILTER (
+                        WHERE
+                            cvt.caller_pos = 3
+                            AND cvt.threebettor_pos = 0
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS call_lj_vs_3bet_btn,
-        ROUND(
-            100.0 * SUM(cvt.call_vs_3bet) FILTER (
-                WHERE
-                    cvt.caller_pos = 3
-                    AND cvt.threebettor_pos = 9
-            ) / NULLIF(
-                SUM(cvt.call_opp) FILTER (
+                2
+            ) AS call_lj_vs_3bet_btn,
+            ROUND(
+                100.0 * SUM(cvt.call_vs_3bet) FILTER (
                     WHERE
                         cvt.caller_pos = 3
                         AND cvt.threebettor_pos = 9
+                ) / NULLIF(
+                    SUM(cvt.call_opp) FILTER (
+                        WHERE
+                            cvt.caller_pos = 3
+                            AND cvt.threebettor_pos = 9
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS call_lj_vs_3bet_sb,
-        ROUND(
-            100.0 * SUM(cvt.call_vs_3bet) FILTER (
-                WHERE
-                    cvt.caller_pos = 3
-                    AND cvt.threebettor_pos = 8
-            ) / NULLIF(
-                SUM(cvt.call_opp) FILTER (
+                2
+            ) AS call_lj_vs_3bet_sb,
+            ROUND(
+                100.0 * SUM(cvt.call_vs_3bet) FILTER (
                     WHERE
                         cvt.caller_pos = 3
                         AND cvt.threebettor_pos = 8
+                ) / NULLIF(
+                    SUM(cvt.call_opp) FILTER (
+                        WHERE
+                            cvt.caller_pos = 3
+                            AND cvt.threebettor_pos = 8
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS call_lj_vs_3bet_bb,
-        ROUND(
-            100.0 * SUM(cvt.call_vs_3bet) FILTER (
-                WHERE
-                    cvt.caller_pos = 2
-                    AND cvt.threebettor_pos = 1
-            ) / NULLIF(
-                SUM(cvt.call_opp) FILTER (
+                2
+            ) AS call_lj_vs_3bet_bb,
+            ROUND(
+                100.0 * SUM(cvt.call_vs_3bet) FILTER (
                     WHERE
                         cvt.caller_pos = 2
                         AND cvt.threebettor_pos = 1
+                ) / NULLIF(
+                    SUM(cvt.call_opp) FILTER (
+                        WHERE
+                            cvt.caller_pos = 2
+                            AND cvt.threebettor_pos = 1
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS call_hj_vs_3bet_co,
-        ROUND(
-            100.0 * SUM(cvt.call_vs_3bet) FILTER (
-                WHERE
-                    cvt.caller_pos = 2
-                    AND cvt.threebettor_pos = 0
-            ) / NULLIF(
-                SUM(cvt.call_opp) FILTER (
+                2
+            ) AS call_hj_vs_3bet_co,
+            ROUND(
+                100.0 * SUM(cvt.call_vs_3bet) FILTER (
                     WHERE
                         cvt.caller_pos = 2
                         AND cvt.threebettor_pos = 0
+                ) / NULLIF(
+                    SUM(cvt.call_opp) FILTER (
+                        WHERE
+                            cvt.caller_pos = 2
+                            AND cvt.threebettor_pos = 0
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS call_hj_vs_3bet_btn,
-        ROUND(
-            100.0 * SUM(cvt.call_vs_3bet) FILTER (
-                WHERE
-                    cvt.caller_pos = 2
-                    AND cvt.threebettor_pos = 9
-            ) / NULLIF(
-                SUM(cvt.call_opp) FILTER (
+                2
+            ) AS call_hj_vs_3bet_btn,
+            ROUND(
+                100.0 * SUM(cvt.call_vs_3bet) FILTER (
                     WHERE
                         cvt.caller_pos = 2
                         AND cvt.threebettor_pos = 9
+                ) / NULLIF(
+                    SUM(cvt.call_opp) FILTER (
+                        WHERE
+                            cvt.caller_pos = 2
+                            AND cvt.threebettor_pos = 9
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS call_hj_vs_3bet_sb,
-        ROUND(
-            100.0 * SUM(cvt.call_vs_3bet) FILTER (
-                WHERE
-                    cvt.caller_pos = 2
-                    AND cvt.threebettor_pos = 8
-            ) / NULLIF(
-                SUM(cvt.call_opp) FILTER (
+                2
+            ) AS call_hj_vs_3bet_sb,
+            ROUND(
+                100.0 * SUM(cvt.call_vs_3bet) FILTER (
                     WHERE
                         cvt.caller_pos = 2
                         AND cvt.threebettor_pos = 8
+                ) / NULLIF(
+                    SUM(cvt.call_opp) FILTER (
+                        WHERE
+                            cvt.caller_pos = 2
+                            AND cvt.threebettor_pos = 8
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS call_hj_vs_3bet_bb,
-        ROUND(
-            100.0 * SUM(cvt.call_vs_3bet) FILTER (
-                WHERE
-                    cvt.caller_pos = 1
-                    AND cvt.threebettor_pos = 0
-            ) / NULLIF(
-                SUM(cvt.call_opp) FILTER (
+                2
+            ) AS call_hj_vs_3bet_bb,
+            ROUND(
+                100.0 * SUM(cvt.call_vs_3bet) FILTER (
                     WHERE
                         cvt.caller_pos = 1
                         AND cvt.threebettor_pos = 0
+                ) / NULLIF(
+                    SUM(cvt.call_opp) FILTER (
+                        WHERE
+                            cvt.caller_pos = 1
+                            AND cvt.threebettor_pos = 0
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS call_co_vs_3bet_btn,
-        ROUND(
-            100.0 * SUM(cvt.call_vs_3bet) FILTER (
-                WHERE
-                    cvt.caller_pos = 1
-                    AND cvt.threebettor_pos = 9
-            ) / NULLIF(
-                SUM(cvt.call_opp) FILTER (
+                2
+            ) AS call_co_vs_3bet_btn,
+            ROUND(
+                100.0 * SUM(cvt.call_vs_3bet) FILTER (
                     WHERE
                         cvt.caller_pos = 1
                         AND cvt.threebettor_pos = 9
+                ) / NULLIF(
+                    SUM(cvt.call_opp) FILTER (
+                        WHERE
+                            cvt.caller_pos = 1
+                            AND cvt.threebettor_pos = 9
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS call_co_vs_3bet_sb,
-        ROUND(
-            100.0 * SUM(cvt.call_vs_3bet) FILTER (
-                WHERE
-                    cvt.caller_pos = 1
-                    AND cvt.threebettor_pos = 8
-            ) / NULLIF(
-                SUM(cvt.call_opp) FILTER (
+                2
+            ) AS call_co_vs_3bet_sb,
+            ROUND(
+                100.0 * SUM(cvt.call_vs_3bet) FILTER (
                     WHERE
                         cvt.caller_pos = 1
                         AND cvt.threebettor_pos = 8
+                ) / NULLIF(
+                    SUM(cvt.call_opp) FILTER (
+                        WHERE
+                            cvt.caller_pos = 1
+                            AND cvt.threebettor_pos = 8
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS call_co_vs_3bet_bb,
-        ROUND(
-            100.0 * SUM(cvt.call_vs_3bet) FILTER (
-                WHERE
-                    cvt.caller_pos = 0
-                    AND cvt.threebettor_pos = 9
-            ) / NULLIF(
-                SUM(cvt.call_opp) FILTER (
+                2
+            ) AS call_co_vs_3bet_bb,
+            ROUND(
+                100.0 * SUM(cvt.call_vs_3bet) FILTER (
                     WHERE
                         cvt.caller_pos = 0
                         AND cvt.threebettor_pos = 9
+                ) / NULLIF(
+                    SUM(cvt.call_opp) FILTER (
+                        WHERE
+                            cvt.caller_pos = 0
+                            AND cvt.threebettor_pos = 9
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS call_btn_vs_3bet_sb,
-        ROUND(
-            100.0 * SUM(cvt.call_vs_3bet) FILTER (
-                WHERE
-                    cvt.caller_pos = 0
-                    AND cvt.threebettor_pos = 8
-            ) / NULLIF(
-                SUM(cvt.call_opp) FILTER (
+                2
+            ) AS call_btn_vs_3bet_sb,
+            ROUND(
+                100.0 * SUM(cvt.call_vs_3bet) FILTER (
                     WHERE
                         cvt.caller_pos = 0
                         AND cvt.threebettor_pos = 8
+                ) / NULLIF(
+                    SUM(cvt.call_opp) FILTER (
+                        WHERE
+                            cvt.caller_pos = 0
+                            AND cvt.threebettor_pos = 8
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS call_btn_vs_3bet_bb,
-        ROUND(
-            100.0 * SUM(cvt.call_vs_3bet) FILTER (
-                WHERE
-                    cvt.caller_pos = 9
-                    AND cvt.threebettor_pos = 8
-            ) / NULLIF(
-                SUM(cvt.call_opp) FILTER (
+                2
+            ) AS call_btn_vs_3bet_bb,
+            ROUND(
+                100.0 * SUM(cvt.call_vs_3bet) FILTER (
                     WHERE
                         cvt.caller_pos = 9
                         AND cvt.threebettor_pos = 8
+                ) / NULLIF(
+                    SUM(cvt.call_opp) FILTER (
+                        WHERE
+                            cvt.caller_pos = 9
+                            AND cvt.threebettor_pos = 8
+                    ),
+                    0
                 ),
-                0
-            ),
-            2
-        ) AS call_sb_vs_3bet_bb
+                2
+            ) AS call_sb_vs_3bet_bb
         FROM
             pop.mv_player_call_vs_3bet_counts cvt
         GROUP BY
