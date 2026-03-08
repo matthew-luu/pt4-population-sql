@@ -11,7 +11,7 @@ WITH
             JOIN vars v ON p.id_limit = v.id_limit
     )
 SELECT
-    row_label AS call_vs_3bet,
+    row_label AS call_vs_threebet,
     EP,
     MP,
     CO,

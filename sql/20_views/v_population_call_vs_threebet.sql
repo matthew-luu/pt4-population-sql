@@ -18,7 +18,7 @@ SELECT
             0
         ),
         2
-    ) AS call_lj_vs_3bet_hj,
+    ) AS call_lj_vs_threebet_hj,
     ROUND(
         100.0 * SUM(cvt.call_vs_3bet) FILTER (
             WHERE
@@ -33,7 +33,7 @@ SELECT
             0
         ),
         2
-    ) AS call_lj_vs_3bet_co,
+    ) AS call_lj_vs_threebet_co,
     ROUND(
         100.0 * SUM(cvt.call_vs_3bet) FILTER (
             WHERE
@@ -48,7 +48,7 @@ SELECT
             0
         ),
         2
-    ) AS call_lj_vs_3bet_btn,
+    ) AS call_lj_vs_threebet_btn,
     ROUND(
         100.0 * SUM(cvt.call_vs_3bet) FILTER (
             WHERE
@@ -63,7 +63,7 @@ SELECT
             0
         ),
         2
-    ) AS call_lj_vs_3bet_sb,
+    ) AS call_lj_vs_threebet_sb,
     ROUND(
         100.0 * SUM(cvt.call_vs_3bet) FILTER (
             WHERE
@@ -78,7 +78,7 @@ SELECT
             0
         ),
         2
-    ) AS call_lj_vs_3bet_bb,
+    ) AS call_lj_vs_threebet_bb,
     ROUND(
         100.0 * SUM(cvt.call_vs_3bet) FILTER (
             WHERE
@@ -93,7 +93,7 @@ SELECT
             0
         ),
         2
-    ) AS call_hj_vs_3bet_co,
+    ) AS call_hj_vs_threebet_co,
     ROUND(
         100.0 * SUM(cvt.call_vs_3bet) FILTER (
             WHERE
@@ -108,7 +108,7 @@ SELECT
             0
         ),
         2
-    ) AS call_hj_vs_3bet_btn,
+    ) AS call_hj_vs_threebet_btn,
     ROUND(
         100.0 * SUM(cvt.call_vs_3bet) FILTER (
             WHERE
@@ -123,7 +123,7 @@ SELECT
             0
         ),
         2
-    ) AS call_hj_vs_3bet_sb,
+    ) AS call_hj_vs_threebet_sb,
     ROUND(
         100.0 * SUM(cvt.call_vs_3bet) FILTER (
             WHERE
@@ -138,7 +138,7 @@ SELECT
             0
         ),
         2
-    ) AS call_hj_vs_3bet_bb,
+    ) AS call_hj_vs_threebet_bb,
     ROUND(
         100.0 * SUM(cvt.call_vs_3bet) FILTER (
             WHERE
@@ -153,7 +153,7 @@ SELECT
             0
         ),
         2
-    ) AS call_co_vs_3bet_btn,
+    ) AS call_co_vs_threebet_btn,
     ROUND(
         100.0 * SUM(cvt.call_vs_3bet) FILTER (
             WHERE
@@ -168,7 +168,7 @@ SELECT
             0
         ),
         2
-    ) AS call_co_vs_3bet_sb,
+    ) AS call_co_vs_threebet_sb,
     ROUND(
         100.0 * SUM(cvt.call_vs_3bet) FILTER (
             WHERE
@@ -183,7 +183,7 @@ SELECT
             0
         ),
         2
-    ) AS call_co_vs_3bet_bb,
+    ) AS call_co_vs_threebet_bb,
     ROUND(
         100.0 * SUM(cvt.call_vs_3bet) FILTER (
             WHERE
@@ -198,7 +198,7 @@ SELECT
             0
         ),
         2
-    ) AS call_btn_vs_3bet_sb,
+    ) AS call_btn_vs_threebet_sb,
     ROUND(
         100.0 * SUM(cvt.call_vs_3bet) FILTER (
             WHERE
@@ -213,7 +213,7 @@ SELECT
             0
         ),
         2
-    ) AS call_btn_vs_3bet_bb,
+    ) AS call_btn_vs_threebet_bb,
     ROUND(
         100.0 * SUM(cvt.call_vs_3bet) FILTER (
             WHERE
@@ -228,7 +228,7 @@ SELECT
             0
         ),
         2
-    ) AS call_sb_vs_3bet_bb
+    ) AS call_sb_vs_threebet_bb
 FROM
     pop.mv_player_call_vs_threebet_counts cvt
 GROUP BY
