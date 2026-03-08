@@ -29,7 +29,7 @@ BEGIN
         FROM pop.mv_player_4bet_vs_3bet_counts
         WHERE fourbet_cnt > fourbet_opp
     ) THEN
-        RAISE EXCEPTION 't_002 failed: mv_player_4bet_vs_3bet_counts has fourbettor_cnt > fourbettor_opp';
+        RAISE EXCEPTION 't_002 failed: mv_player_4bet_vs_3bet_counts has fourbet_cnt > fourbet_opp';
     END IF;
 
     IF EXISTS (

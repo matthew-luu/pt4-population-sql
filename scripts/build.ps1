@@ -20,11 +20,13 @@ if (-not (Test-Path $exportDir)) {
 
 Write-Host "Building database objects..."
 psql -h $DbHost -U $DbUser -d $Db -f sql/build.sql -v ON_ERROR_STOP=1
+if ($LASTEXITCODE -ne 0) { throw "Build failed with exit code $LASTEXITCODE" }
 
 Write-Host "Verifying database objects..."
 psql -h $DbHost -U $DbUser -d $Db -f sql/verify.sql -v ON_ERROR_STOP=1
+if ($LASTEXITCODE -ne 0) { throw "Verification failed with exit code $LASTEXITCODE" }
 
 Write-Host "Exporting reports..."
 psql -h $DbHost -U $DbUser -d $Db -f sql/export_reports.sql -v ON_ERROR_STOP=1
-
+if ($LASTEXITCODE -ne 0) { throw "Export failed with exit code $LASTEXITCODE" }
 Write-Host "Done."
