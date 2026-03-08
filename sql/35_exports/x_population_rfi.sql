@@ -1,0 +1,1 @@
+\copy (SELECT * FROM pop.v_population_rfi ORDER BY id_limit) TO './Exported Reports/population_rfi.csv' CSV HEADER
