@@ -1,6 +1,20 @@
 -- ops/clean.sql
 DROP VIEW IF EXISTS pop.v_population_preflop;
 
+DROP VIEW IF EXISTS pop.v_population_fold_vs_3bet;
+
+DROP VIEW IF EXISTS pop.v_population_call_vs_3bet;
+
+DROP VIEW IF EXISTS pop.v_population_4bet_vs_3bet;
+
+DROP VIEW IF EXISTS pop.v_population_fold_vs_open;
+
+DROP VIEW IF EXISTS pop.v_population_call_vs_open;
+
+DROP VIEW IF EXISTS pop.v_population_3bet_vs_open;
+
+DROP VIEW IF EXISTS pop.v_population_rfi;
+
 DROP VIEW IF EXISTS pop.v_player_preflop;
 
 DROP VIEW IF EXISTS pop.v_player_4bet_vs_3bet;

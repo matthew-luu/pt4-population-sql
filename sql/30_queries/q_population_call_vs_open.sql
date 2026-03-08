@@ -24,11 +24,11 @@ FROM
             1 AS sort_order,
             'EP' AS row_label,
             NULL AS ep,
-            call_hj_vs_utg AS mp,
-            call_co_vs_utg AS co,
-            call_btn_vs_utg AS btn,
-            call_sb_vs_utg AS sb,
-            call_bb_vs_utg AS bb
+            call_hj_vs_lj AS mp,
+            call_co_vs_lj AS co,
+            call_btn_vs_lj AS btn,
+            call_sb_vs_lj AS sb,
+            call_bb_vs_lj AS bb
         FROM
             base
         UNION ALL
