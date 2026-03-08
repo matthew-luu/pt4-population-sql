@@ -1,42 +1,36 @@
 \set ON_ERROR_STOP on
 
--- Bootstrap
+\echo ===== Building bootstrap =====
 \i sql/00_bootstrap/00_create_schema.sql
 \i sql/00_bootstrap/01_set_search_path.sql
 
---Clean
+\echo ===== Cleaning Old Views =====
 \i ops/clean.sql
 
--- Foundational views
+\echo ===== Building foundation views =====
 \i sql/05_foundation_views/v_hand_limits.sql
 
--- Materialized views
+\echo ===== Building materialized views =====
 \i sql/10_materialized_views/mv_player_rfi_counts.sql
 \i sql/10_materialized_views/mv_player_call_vs_open_counts.sql
 \i sql/10_materialized_views/mv_player_3bet_vs_open_counts.sql
 \i sql/10_materialized_views/mv_player_4bet_vs_3bet_counts.sql
 \i sql/10_materialized_views/mv_player_call_vs_3bet_counts.sql
 
--- Views
+\echo ===== Building views =====
 \i sql/20_views/v_player_rfi.sql
 \i sql/20_views/v_player_call_vs_open.sql
 \i sql/20_views/v_player_3bet_vs_open.sql
 \i sql/20_views/v_player_fold_vs_open.sql
-\i sql/20_views/v_player_4bet_vs_3bet.sql
 \i sql/20_views/v_player_call_vs_3bet.sql
+\i sql/20_views/v_player_4bet_vs_3bet.sql
 \i sql/20_views/v_player_preflop.sql
+
 \i sql/20_views/v_population_rfi.sql
-\i sql/20_views/v_population_call_vs_open.sql 
+\i sql/20_views/v_population_call_vs_open.sql
 \i sql/20_views/v_population_3bet_vs_open.sql
 \i sql/20_views/v_population_fold_vs_open.sql
-\i sql/20_views/v_population_4bet_vs_3bet.sql
 \i sql/20_views/v_population_call_vs_3bet.sql
+\i sql/20_views/v_population_4bet_vs_3bet.sql
 \i sql/20_views/v_population_fold_vs_3bet.sql
-
-\i sql/20_views/v_population_preflop.sql 
-
--- Refresh
-\i ops/refresh_mvs.sql
-
--- Optional sanity check (uncomment if you add the file)
--- \i ops/sanity_objects.sql
+\i sql/20_views/v_population_preflop.sql

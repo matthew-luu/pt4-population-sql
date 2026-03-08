@@ -10,11 +10,23 @@ if (-not (Get-Command psql -ErrorAction SilentlyContinue)) {
   throw "psql not found. Run .\scripts\install_psql.ps1 first."
 }
 
-Write-Host "Building database objects..."
+$repoRoot = Split-Path -Parent $PSScriptRoot
+Set-Location $repoRoot
 
-& psql `
-  -h "$DbHost" `
-  -U "$DbUser" `
-  -d "$Db" `
-  -f "scripts/build.sql" `
-  -v ON_ERROR_STOP=1
+$exportDir = Join-Path $repoRoot "Exported Reports"
+if (-not (Test-Path $exportDir)) {
+  New-Item -ItemType Directory -Path $exportDir | Out-Null
+}
+
+Write-Host "Building database objects..."
+psql -h $DbHost -U $DbUser -d $Db -f sql/build.sql -v ON_ERROR_STOP=1
+if ($LASTEXITCODE -ne 0) { throw "Build failed with exit code $LASTEXITCODE" }
+
+Write-Host "Verifying database objects..."
+psql -h $DbHost -U $DbUser -d $Db -f sql/verify.sql -v ON_ERROR_STOP=1
+if ($LASTEXITCODE -ne 0) { throw "Verification failed with exit code $LASTEXITCODE" }
+
+Write-Host "Exporting reports..."
+psql -h $DbHost -U $DbUser -d $Db -f sql/export_reports.sql -v ON_ERROR_STOP=1
+if ($LASTEXITCODE -ne 0) { throw "Export failed with exit code $LASTEXITCODE" }
+Write-Host "Done."

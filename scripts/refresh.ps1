@@ -8,5 +8,5 @@ param(
   -h $DbHost `
   -U $User `
   -d $Db `
-  -f "scripts/refresh.sql" `
+  -f "sql/refresh.sql" `
   -v ON_ERROR_STOP=1
