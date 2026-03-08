@@ -1,1 +1,0 @@
-\copy (SELECT * FROM pop.v_population_fold_vs_3bet ORDER BY id_limit) TO './Exported Reports/population_fold_vs_3bet.csv' CSV HEADER

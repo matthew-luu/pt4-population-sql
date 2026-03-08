@@ -107,8 +107,8 @@ SELECT
 FROM
     pop.v_population_rfi r
     LEFT JOIN pop.v_population_call_vs_open c ON c.id_limit = r.id_limit
-    LEFT JOIN pop.v_population_3bet_vs_open t ON t.id_limit = r.id_limit
+    LEFT JOIN pop.v_population_threebet_vs_open t ON t.id_limit = r.id_limit
     LEFT JOIN pop.v_population_fold_vs_open f ON f.id_limit = r.id_limit
-    LEFT JOIN pop.v_population_4bet_vs_3bet fb on fb.id_limit = r.id_limit
-    LEFT JOIN pop.v_population_call_vs_3bet cvt on cvt.id_limit = r.id_limit
-    LEFT JOIN pop.v_population_fold_vs_3bet fvt on fvt.id_limit = r.id_limit;
+    LEFT JOIN pop.v_population_fourbet_vs_threebet fb on fb.id_limit = r.id_limit
+    LEFT JOIN pop.v_population_call_vs_threebet cvt on cvt.id_limit = r.id_limit
+    LEFT JOIN pop.v_population_fold_vs_threebet fvt on fvt.id_limit = r.id_limit;

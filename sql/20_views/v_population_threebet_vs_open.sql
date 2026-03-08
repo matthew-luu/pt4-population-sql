@@ -1,7 +1,7 @@
-DROP VIEW IF EXISTS pop.v_population_3bet_vs_open;
+DROP VIEW IF EXISTS pop.v_population_threebet_vs_open;
 
 CREATE VIEW
-    pop.v_population_3bet_vs_open AS
+    pop.v_population_threebet_vs_open AS
 SELECT
     t.id_limit,
     ROUND(

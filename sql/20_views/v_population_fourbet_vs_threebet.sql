@@ -1,7 +1,7 @@
-DROP VIEW IF EXISTS pop.v_population_4bet_vs_3bet;
+DROP VIEW IF EXISTS pop.v_population_fourbet_vs_threebet;
 
 CREATE VIEW
-    pop.v_population_4bet_vs_3bet AS
+    pop.v_population_fourbet_vs_threebet AS
 SELECT
     fb.id_limit,
     ROUND(

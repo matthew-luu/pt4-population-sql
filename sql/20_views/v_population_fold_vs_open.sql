@@ -67,4 +67,4 @@ SELECT
     ) AS fold_bb_vs_sb
 FROM
     pop.v_population_call_vs_open c
-    FULL OUTER JOIN pop.v_population_3bet_vs_open t ON t.id_limit = c.id_limit
+    FULL OUTER JOIN pop.v_population_threebet_vs_open t ON t.id_limit = c.id_limit
