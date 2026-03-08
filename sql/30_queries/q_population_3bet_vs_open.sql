@@ -11,7 +11,7 @@ WITH
             JOIN vars v ON p.id_limit = v.id_limit
     )
 SELECT
-    row_label AS vs_open,
+    row_label AS "3bet_vs_open",
     ep,
     mp,
     co,
@@ -24,11 +24,11 @@ FROM
             1 AS sort_order,
             'EP' AS row_label,
             NULL AS ep,
-            threebet_hj_vs_utg AS mp,
-            threebet_co_vs_utg AS co,
-            threebet_btn_vs_utg AS btn,
-            threebet_sb_vs_utg AS sb,
-            threebet_bb_vs_utg AS bb
+            threebet_hj_vs_lj AS mp,
+            threebet_co_vs_lj AS co,
+            threebet_btn_vs_lj AS btn,
+            threebet_sb_vs_lj AS sb,
+            threebet_bb_vs_lj AS bb
         FROM
             base
         UNION ALL

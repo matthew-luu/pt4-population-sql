@@ -1,6 +1,6 @@
 WITH vars AS (
     SELECT 
-        0 AS open_pos,     -- opener position code (6-max: BTN=0 CO=1 HJ=2 UTG/EP=3 SB=9 BB=8)
+        0 AS open_pos,     -- opener position code (6-max: BTN=0 CO=1 HJ=2 lj/EP=3 SB=9 BB=8)
         8 AS call_pos,     -- caller position code
         1 AS hero_id       -- id_player to measure
 )

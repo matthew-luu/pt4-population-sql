@@ -7,23 +7,23 @@ SELECT
     tb.id_limit,
     /* ---------- Defender HJ (2) ---------- */
     ROUND(
-        100.0 - COALESCE(tb.threebet_hj_vs_utg, 0) - COALESCE(c.call_hj_vs_utg, 0),
+        100.0 - COALESCE(tb.threebet_hj_vs_lj, 0) - COALESCE(c.call_hj_vs_lj, 0),
         2
-    ) AS fold_hj_vs_utg,
+    ) AS fold_hj_vs_lj,
     /* ---------- Defender CO (1) ---------- */
     ROUND(
-        100.0 - COALESCE(tb.threebet_co_vs_utg, 0) - COALESCE(c.call_co_vs_utg, 0),
+        100.0 - COALESCE(tb.threebet_co_vs_lj, 0) - COALESCE(c.call_co_vs_lj, 0),
         2
-    ) AS fold_co_vs_utg,
+    ) AS fold_co_vs_lj,
     ROUND(
         100.0 - COALESCE(tb.threebet_co_vs_hj, 0) - COALESCE(c.call_co_vs_hj, 0),
         2
     ) AS fold_co_vs_hj,
     /* ---------- Defender BTN (0) ---------- */
     ROUND(
-        100.0 - COALESCE(tb.threebet_btn_vs_utg, 0) - COALESCE(c.call_btn_vs_utg, 0),
+        100.0 - COALESCE(tb.threebet_btn_vs_lj, 0) - COALESCE(c.call_btn_vs_lj, 0),
         2
-    ) AS fold_btn_vs_utg,
+    ) AS fold_btn_vs_lj,
     ROUND(
         100.0 - COALESCE(tb.threebet_btn_vs_hj, 0) - COALESCE(c.call_btn_vs_hj, 0),
         2
@@ -34,9 +34,9 @@ SELECT
     ) AS fold_btn_vs_co,
     /* ---------- Defender SB (9) ---------- */
     ROUND(
-        100.0 - COALESCE(tb.threebet_sb_vs_utg, 0) - COALESCE(c.call_sb_vs_utg, 0),
+        100.0 - COALESCE(tb.threebet_sb_vs_lj, 0) - COALESCE(c.call_sb_vs_lj, 0),
         2
-    ) AS fold_sb_vs_utg,
+    ) AS fold_sb_vs_lj,
     ROUND(
         100.0 - COALESCE(tb.threebet_sb_vs_hj, 0) - COALESCE(c.call_sb_vs_hj, 0),
         2
@@ -51,9 +51,9 @@ SELECT
     ) AS fold_sb_vs_btn,
     /* ---------- Defender BB (8) ---------- */
     ROUND(
-        100.0 - COALESCE(tb.threebet_bb_vs_utg, 0) - COALESCE(c.call_bb_vs_utg, 0),
+        100.0 - COALESCE(tb.threebet_bb_vs_lj, 0) - COALESCE(c.call_bb_vs_lj, 0),
         2
-    ) AS fold_bb_vs_utg,
+    ) AS fold_bb_vs_lj,
     ROUND(
         100.0 - COALESCE(tb.threebet_bb_vs_hj, 0) - COALESCE(c.call_bb_vs_hj, 0),
         2

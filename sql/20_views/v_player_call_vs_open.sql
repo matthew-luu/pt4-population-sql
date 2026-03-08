@@ -20,7 +20,7 @@ SELECT
       0
     ),
     2
-  ) AS call_hj_vs_utg,
+  ) AS call_hj_vs_lj,
   /* ---------- Defender CO (1) ---------- */
   ROUND(
     100.0 * SUM(call_vs_open) FILTER (
@@ -36,7 +36,7 @@ SELECT
       0
     ),
     2
-  ) AS call_co_vs_utg,
+  ) AS call_co_vs_lj,
   ROUND(
     100.0 * SUM(call_vs_open) FILTER (
       WHERE
@@ -67,7 +67,7 @@ SELECT
       0
     ),
     2
-  ) AS call_btn_vs_utg,
+  ) AS call_btn_vs_lj,
   ROUND(
     100.0 * SUM(call_vs_open) FILTER (
       WHERE
@@ -113,7 +113,7 @@ SELECT
       0
     ),
     2
-  ) AS call_sb_vs_utg,
+  ) AS call_sb_vs_lj,
   ROUND(
     100.0 * SUM(call_vs_open) FILTER (
       WHERE
@@ -174,7 +174,7 @@ SELECT
       0
     ),
     2
-  ) AS call_bb_vs_utg,
+  ) AS call_bb_vs_lj,
   ROUND(
     100.0 * SUM(call_vs_open) FILTER (
       WHERE

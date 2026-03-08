@@ -11,7 +11,7 @@ WITH
             JOIN vars v ON p.id_limit = v.id_limit
     )
 SELECT
-    row_label AS vs_open,
+    row_label AS fold_vs_open,
     ep,
     mp,
     co,
@@ -24,11 +24,11 @@ FROM
             1 AS sort_order,
             'EP' AS row_label,
             NULL AS ep,
-            fold_hj_vs_utg AS mp,
-            fold_co_vs_utg AS co,
-            fold_btn_vs_utg AS btn,
-            fold_sb_vs_utg AS sb,
-            fold_bb_vs_utg AS bb
+            fold_hj_vs_lj AS mp,
+            fold_co_vs_lj AS co,
+            fold_btn_vs_lj AS btn,
+            fold_sb_vs_lj AS sb,
+            fold_bb_vs_lj AS bb
         FROM
             base
         UNION ALL

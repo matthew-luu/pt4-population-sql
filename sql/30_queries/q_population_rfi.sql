@@ -4,7 +4,7 @@ WITH
             2 AS id_limit
     )
 SELECT
-    p.rfi_utg AS ep,
+    p.rfi_lj AS ep,
     p.rfi_hj AS mp,
     p.rfi_co AS co,
     p.rfi_btn AS btn,
