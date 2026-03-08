@@ -8,11 +8,11 @@ SELECT
     hl.id_limit,
     COUNT(*) FILTER (
         WHERE
-            s.flg_p_4bet_def_opp
+            s.flg_p_3bet_def_opp
     ) AS call_opp,
     COUNT(*) FILTER (
         WHERE
-            s.enum_p_4bet_action like 'C%'
+            s.enum_p_3bet_action like 'C%'
     ) AS call_vs_3bet
 FROM
     cash_hand_player_statistics s
