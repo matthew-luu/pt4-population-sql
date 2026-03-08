@@ -81,7 +81,7 @@ FROM
             base
         UNION ALL
         SELECT
-            5,
+            6,
             'vs BB',
             fourbet_lj_vs_bb,
             fourbet_hj_vs_bb,
@@ -91,6 +91,6 @@ FROM
             null
         FROM
             base
-    ) x
+    )
 ORDER BY
     sort_order;

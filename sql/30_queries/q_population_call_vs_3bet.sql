@@ -81,16 +81,16 @@ FROM
             base
         UNION ALL
         SELECT
-            5,
+            6,
             'vs BB',
             call_lj_vs_3bet_bb,
             call_hj_vs_3bet_bb,
             call_co_vs_3bet_bb,
             call_btn_vs_3bet_bb,
             call_sb_vs_3bet_bb,
-            null
+            NULL
         FROM
             base
-    ) x
+    ) 
 ORDER BY
     sort_order;

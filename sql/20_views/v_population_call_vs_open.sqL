@@ -232,4 +232,4 @@ SELECT
 FROM
     pop.mv_player_call_vs_open_counts c
 GROUP BY
-    c.id_limit
+    c.id_limit;
