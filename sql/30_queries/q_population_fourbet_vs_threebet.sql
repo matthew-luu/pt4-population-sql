@@ -11,7 +11,7 @@ WITH
             JOIN vars v ON p.id_limit = v.id_limit
     )
 SELECT
-    row_label AS fold_vs_3bet,
+    row_label AS fourbet_vs_threebet,
     EP,
     MP,
     CO,
@@ -35,7 +35,7 @@ FROM
         SELECT
             2,
             'vs MP',
-            fold_lj_vs_3bet_hj,
+            fourbet_lj_vs_hj,
             NULL,
             NULL,
             NULL,
@@ -47,8 +47,8 @@ FROM
         SELECT
             3,
             'vs CO',
-            fold_lj_vs_3bet_co,
-            fold_hj_vs_3bet_co,
+            fourbet_lj_vs_co,
+            fourbet_hj_vs_co,
             NULL,
             NULL,
             NULL,
@@ -59,9 +59,9 @@ FROM
         SELECT
             4,
             'vs BTN',
-            fold_lj_vs_3bet_btn,
-            fold_hj_vs_3bet_btn,
-            fold_co_vs_3bet_btn,
+            fourbet_lj_vs_btn,
+            fourbet_hj_vs_btn,
+            fourbet_co_vs_btn,
             NULL,
             NULL,
             NULL
@@ -71,10 +71,10 @@ FROM
         SELECT
             5,
             'vs SB',
-            fold_lj_vs_3bet_sb,
-            fold_hj_vs_3bet_sb,
-            fold_co_vs_3bet_sb,
-            fold_btn_vs_3bet_sb,
+            fourbet_lj_vs_sb,
+            fourbet_hj_vs_sb,
+            fourbet_co_vs_sb,
+            fourbet_btn_vs_sb,
             NULL,
             NULL
         FROM
@@ -83,12 +83,12 @@ FROM
         SELECT
             6,
             'vs BB',
-            fold_lj_vs_3bet_bb,
-            fold_hj_vs_3bet_bb,
-            fold_co_vs_3bet_bb,
-            fold_btn_vs_3bet_bb,
-            fold_sb_vs_3bet_bb,
-            NULL        
+            fourbet_lj_vs_bb,
+            fourbet_hj_vs_bb,
+            fourbet_co_vs_bb,
+            fourbet_btn_vs_bb,
+            fourbet_sb_vs_bb,
+            null
         FROM
             base
     )
