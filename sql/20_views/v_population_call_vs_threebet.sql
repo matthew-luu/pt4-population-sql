@@ -5,7 +5,7 @@ CREATE VIEW
 SELECT
     cvt.id_limit,
     ROUND(
-        100.0 * SUM(cvt.call_vs_3bet) FILTER (
+        100.0 * SUM(cvt.call_vs_threebet) FILTER (
             WHERE
                 cvt.caller_pos = 3
                 AND cvt.threebettor_pos = 2
@@ -20,7 +20,7 @@ SELECT
         2
     ) AS call_lj_vs_threebet_hj,
     ROUND(
-        100.0 * SUM(cvt.call_vs_3bet) FILTER (
+        100.0 * SUM(cvt.call_vs_threebet) FILTER (
             WHERE
                 cvt.caller_pos = 3
                 AND cvt.threebettor_pos = 1
@@ -35,7 +35,7 @@ SELECT
         2
     ) AS call_lj_vs_threebet_co,
     ROUND(
-        100.0 * SUM(cvt.call_vs_3bet) FILTER (
+        100.0 * SUM(cvt.call_vs_threebet) FILTER (
             WHERE
                 cvt.caller_pos = 3
                 AND cvt.threebettor_pos = 0
@@ -50,7 +50,7 @@ SELECT
         2
     ) AS call_lj_vs_threebet_btn,
     ROUND(
-        100.0 * SUM(cvt.call_vs_3bet) FILTER (
+        100.0 * SUM(cvt.call_vs_threebet) FILTER (
             WHERE
                 cvt.caller_pos = 3
                 AND cvt.threebettor_pos = 9
@@ -65,7 +65,7 @@ SELECT
         2
     ) AS call_lj_vs_threebet_sb,
     ROUND(
-        100.0 * SUM(cvt.call_vs_3bet) FILTER (
+        100.0 * SUM(cvt.call_vs_threebet) FILTER (
             WHERE
                 cvt.caller_pos = 3
                 AND cvt.threebettor_pos = 8
@@ -80,7 +80,7 @@ SELECT
         2
     ) AS call_lj_vs_threebet_bb,
     ROUND(
-        100.0 * SUM(cvt.call_vs_3bet) FILTER (
+        100.0 * SUM(cvt.call_vs_threebet) FILTER (
             WHERE
                 cvt.caller_pos = 2
                 AND cvt.threebettor_pos = 1
@@ -95,7 +95,7 @@ SELECT
         2
     ) AS call_hj_vs_threebet_co,
     ROUND(
-        100.0 * SUM(cvt.call_vs_3bet) FILTER (
+        100.0 * SUM(cvt.call_vs_threebet) FILTER (
             WHERE
                 cvt.caller_pos = 2
                 AND cvt.threebettor_pos = 0
@@ -110,7 +110,7 @@ SELECT
         2
     ) AS call_hj_vs_threebet_btn,
     ROUND(
-        100.0 * SUM(cvt.call_vs_3bet) FILTER (
+        100.0 * SUM(cvt.call_vs_threebet) FILTER (
             WHERE
                 cvt.caller_pos = 2
                 AND cvt.threebettor_pos = 9
@@ -125,7 +125,7 @@ SELECT
         2
     ) AS call_hj_vs_threebet_sb,
     ROUND(
-        100.0 * SUM(cvt.call_vs_3bet) FILTER (
+        100.0 * SUM(cvt.call_vs_threebet) FILTER (
             WHERE
                 cvt.caller_pos = 2
                 AND cvt.threebettor_pos = 8
@@ -140,7 +140,7 @@ SELECT
         2
     ) AS call_hj_vs_threebet_bb,
     ROUND(
-        100.0 * SUM(cvt.call_vs_3bet) FILTER (
+        100.0 * SUM(cvt.call_vs_threebet) FILTER (
             WHERE
                 cvt.caller_pos = 1
                 AND cvt.threebettor_pos = 0
@@ -155,7 +155,7 @@ SELECT
         2
     ) AS call_co_vs_threebet_btn,
     ROUND(
-        100.0 * SUM(cvt.call_vs_3bet) FILTER (
+        100.0 * SUM(cvt.call_vs_threebet) FILTER (
             WHERE
                 cvt.caller_pos = 1
                 AND cvt.threebettor_pos = 9
@@ -170,7 +170,7 @@ SELECT
         2
     ) AS call_co_vs_threebet_sb,
     ROUND(
-        100.0 * SUM(cvt.call_vs_3bet) FILTER (
+        100.0 * SUM(cvt.call_vs_threebet) FILTER (
             WHERE
                 cvt.caller_pos = 1
                 AND cvt.threebettor_pos = 8
@@ -185,7 +185,7 @@ SELECT
         2
     ) AS call_co_vs_threebet_bb,
     ROUND(
-        100.0 * SUM(cvt.call_vs_3bet) FILTER (
+        100.0 * SUM(cvt.call_vs_threebet) FILTER (
             WHERE
                 cvt.caller_pos = 0
                 AND cvt.threebettor_pos = 9
@@ -200,7 +200,7 @@ SELECT
         2
     ) AS call_btn_vs_threebet_sb,
     ROUND(
-        100.0 * SUM(cvt.call_vs_3bet) FILTER (
+        100.0 * SUM(cvt.call_vs_threebet) FILTER (
             WHERE
                 cvt.caller_pos = 0
                 AND cvt.threebettor_pos = 8
@@ -215,7 +215,7 @@ SELECT
         2
     ) AS call_btn_vs_threebet_bb,
     ROUND(
-        100.0 * SUM(cvt.call_vs_3bet) FILTER (
+        100.0 * SUM(cvt.call_vs_threebet) FILTER (
             WHERE
                 cvt.caller_pos = 9
                 AND cvt.threebettor_pos = 8

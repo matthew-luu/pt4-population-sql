@@ -13,7 +13,7 @@ SELECT
     COUNT(*) FILTER (
         WHERE
             s.enum_p_3bet_action like 'C%'
-    ) AS call_vs_3bet
+    ) AS call_vs_threebet
 FROM
     cash_hand_player_statistics s
     JOIN cash_hand_player_statistics t ON t.id_hand = s.id_hand

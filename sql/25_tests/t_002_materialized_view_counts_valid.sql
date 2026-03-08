@@ -35,8 +35,8 @@ BEGIN
     IF EXISTS (
         SELECT 1
         FROM pop.mv_player_call_vs_threebet_counts
-        WHERE call_vs_3bet > call_opp
+        WHERE call_vs_threebet > call_opp
     ) THEN
-        RAISE EXCEPTION 't_002 failed: mv_player_call_vs_threebet_counts has call_vs_3bet > call_opp';
+        RAISE EXCEPTION 't_002 failed: mv_player_call_vs_threebet_counts has call_vs_threebet > call_opp';
     END IF;
 END $$;
