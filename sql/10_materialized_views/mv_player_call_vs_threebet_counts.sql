@@ -19,7 +19,6 @@ FROM
     JOIN cash_hand_player_statistics t ON t.id_hand = s.id_hand
     AND t.id_player <> s.id_player
     AND t.flg_p_3bet
-    JOIN lookup_actions la ON la.id_action = s.id_action_p
     JOIN pop.v_hand_limits hl ON hl.id_hand = s.id_hand
 WHERE
     s.id_player NOT IN (-1, 0, 1)
