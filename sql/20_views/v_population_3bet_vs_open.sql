@@ -230,6 +230,6 @@ SELECT
         2
     ) AS threebet_bb_vs_sb
 FROM
-    pop.mv_player_3bet_vs_open_counts t
+    pop.mv_player_threebet_vs_open_counts t
 GROUP BY
     t.id_limit

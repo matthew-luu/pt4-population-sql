@@ -1,6 +1,6 @@
-DROP MATERIALIZED VIEW IF EXISTS pop.mv_player_3bet_vs_open_counts;
+DROP MATERIALIZED VIEW IF EXISTS pop.mv_player_threebet_vs_open_counts;
 
-CREATE MATERIALIZED VIEW pop.mv_player_3bet_vs_open_counts AS
+CREATE MATERIALIZED VIEW pop.mv_player_threebet_vs_open_counts AS
 SELECT
   s.id_player,
   s.position AS threebettor_pos,

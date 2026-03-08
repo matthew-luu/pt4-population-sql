@@ -18,25 +18,25 @@ BEGIN
 
     IF EXISTS (
         SELECT 1
-        FROM pop.mv_player_3bet_vs_open_counts
+        FROM pop.mv_player_threebet_vs_open_counts
         WHERE threebet_cnt > threebet_opp
     ) THEN
-        RAISE EXCEPTION 't_002 failed: mv_player_3bet_vs_open_counts has threebet_cnt > threebet_opp';
+        RAISE EXCEPTION 't_002 failed: mv_player_threebet_vs_open_counts has threebet_cnt > threebet_opp';
     END IF;
 
     IF EXISTS (
         SELECT 1
-        FROM pop.mv_player_4bet_vs_3bet_counts
+        FROM pop.mv_player_fourbet_vs_threebet_counts
         WHERE fourbet_cnt > fourbet_opp
     ) THEN
-        RAISE EXCEPTION 't_002 failed: mv_player_4bet_vs_3bet_counts has fourbet_cnt > fourbet_opp';
+        RAISE EXCEPTION 't_002 failed: mv_player_fourbet_vs_threebet_counts has fourbet_cnt > fourbet_opp';
     END IF;
 
     IF EXISTS (
         SELECT 1
-        FROM pop.mv_player_call_vs_3bet_counts
+        FROM pop.mv_player_call_vs_threebet_counts
         WHERE call_vs_3bet > call_opp
     ) THEN
-        RAISE EXCEPTION 't_002 failed: mv_player_call_vs_3bet_counts has call_vs_3bet > call_opp';
+        RAISE EXCEPTION 't_002 failed: mv_player_call_vs_threebet_counts has call_vs_3bet > call_opp';
     END IF;
 END $$;

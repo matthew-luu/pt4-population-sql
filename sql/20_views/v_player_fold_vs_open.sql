@@ -71,6 +71,6 @@ SELECT
         2
     ) AS fold_bb_vs_sb
 FROM
-    pop.v_player_3bet_vs_open tb
+    pop.v_player_threebet_vs_open tb
     LEFT JOIN pop.v_player_call_vs_open c ON tb.id_player = c.id_player
     AND tb.id_limit = c.id_limit;

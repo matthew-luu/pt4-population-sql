@@ -230,6 +230,6 @@ SELECT
         2
     ) AS fourbet_sb_vs_bb
 FROM
-    pop.mv_player_4bet_vs_3bet_counts fb
+    pop.mv_player_fourbet_vs_threebet_counts fb
 GROUP BY
     fb.id_limit

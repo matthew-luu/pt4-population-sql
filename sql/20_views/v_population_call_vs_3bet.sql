@@ -230,6 +230,6 @@ SELECT
         2
     ) AS call_sb_vs_3bet_bb
 FROM
-    pop.mv_player_call_vs_3bet_counts cvt
+    pop.mv_player_call_vs_threebet_counts cvt
 GROUP BY
     cvt.id_limit
