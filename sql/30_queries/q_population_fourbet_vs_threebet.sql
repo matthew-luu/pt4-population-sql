@@ -12,8 +12,8 @@ WITH
     )
 SELECT
     row_label AS fourbet_vs_threebet,
-    EP,
-    MP,
+    LJ,
+    HJ,
     CO,
     BTN,
     SB,
@@ -22,9 +22,9 @@ FROM
     (
         SELECT
             1 AS sort_order,
-            'vs EP' AS row_label,
-            NULL::numeric AS ep,
-            NULL::numeric AS mp,
+            'vs LJ' AS row_label,
+            NULL::numeric AS lj,
+            NULL::numeric AS hj,
             NULL::numeric AS co,
             NULL::numeric AS btn,
             NULL::numeric AS sb,
@@ -34,7 +34,7 @@ FROM
         UNION ALL
         SELECT
             2,
-            'vs MP',
+            'vs HJ',
             fourbet_lj_vs_hj,
             NULL,
             NULL,

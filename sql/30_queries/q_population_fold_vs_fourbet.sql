@@ -12,19 +12,19 @@ WITH
     )
 SELECT
     row_label AS "fold_vs_fourbet",
-    ep,
-    mp,
-    co,
-    btn,
-    sb,
-    bb
+    LJ,
+    HJ,
+    CO,
+    BTN,
+    SB,
+    BB
 FROM
     (
         SELECT
             1 AS sort_order,
-            'MP' AS row_label,
-            fold_hj_vs_fourbet_lj AS ep,
-            NULL AS mp,
+            'HJ' AS row_label,
+            fold_hj_vs_fourbet_lj AS lj,
+            NULL AS hj,
             NULL AS co,
             NULL AS btn,
             NULL AS sb,
