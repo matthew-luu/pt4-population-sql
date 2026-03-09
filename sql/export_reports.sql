@@ -14,4 +14,4 @@
 \i sql/35_exports/x_population_preflop.sql
 
 -- Custom reports
-\i sql/35_exports/x_population.sql
+\i sql/35_exports/custom/x_population.sql

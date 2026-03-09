@@ -12,19 +12,19 @@ WITH
     )
 SELECT
     row_label AS fold_vs_open,
-    ep,
-    mp,
-    co,
-    btn,
-    sb,
-    bb
+    LJ,
+    HJ,
+    CO,
+    BTN,
+    SB,
+    BB
 FROM
     (
         SELECT
             1 AS sort_order,
-            'EP' AS row_label,
-            NULL AS ep,
-            fold_hj_vs_lj AS mp,
+            'vs LJ' AS row_label,
+            NULL AS lj,
+            fold_hj_vs_lj AS hj,
             fold_co_vs_lj AS co,
             fold_btn_vs_lj AS btn,
             fold_sb_vs_lj AS sb,
@@ -34,7 +34,7 @@ FROM
         UNION ALL
         SELECT
             2,
-            'MP',
+            'vs HJ',
             NULL,
             NULL,
             fold_co_vs_hj,
@@ -46,7 +46,7 @@ FROM
         UNION ALL
         SELECT
             3,
-            'CO',
+            'vs CO',
             NULL,
             NULL,
             NULL,
@@ -58,7 +58,7 @@ FROM
         UNION ALL
         SELECT
             4,
-            'BTN',
+            'vs BTN',
             NULL,
             NULL,
             NULL,
@@ -70,7 +70,7 @@ FROM
         UNION ALL
         SELECT
             5,
-            'SB',
+            'vs SB',
             NULL,
             NULL,
             NULL,

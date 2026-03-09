@@ -12,19 +12,19 @@ WITH
     )
 SELECT
     row_label AS "call_vs_fourbet",
-    ep,
-    mp,
-    co,
-    btn,
-    sb,
-    bb
+    LJ,
+    HJ,
+    CO,
+    BTN,
+    SB,
+    BB
 FROM
     (
         SELECT
             1 AS sort_order,
-            'MP' AS row_label,
-            call_hj_vs_fourbet_lj AS ep,
-            NULL AS mp,
+            'vs HJ' AS row_label,
+            call_hj_vs_fourbet_lj AS lj,
+            NULL AS hj,
             NULL AS co,
             NULL AS btn,
             NULL AS sb,
@@ -34,7 +34,7 @@ FROM
         UNION ALL
         SELECT
             2,
-            'CO',
+            'vs CO',
             call_co_vs_fourbet_lj,
             call_co_vs_fourbet_hj,
             NULL,
@@ -46,7 +46,7 @@ FROM
         UNION ALL
         SELECT
             3,
-            'BTN',
+            'vs BTN',
             call_btn_vs_fourbet_lj,
             call_btn_vs_fourbet_hj,
             call_btn_vs_fourbet_co,
@@ -58,7 +58,7 @@ FROM
         UNION ALL
         SELECT
             4,
-            'SB',
+            'vs SB',
             call_sb_vs_fourbet_lj,
             call_sb_vs_fourbet_hj,
             call_sb_vs_fourbet_co,
@@ -70,7 +70,7 @@ FROM
         UNION ALL
         SELECT
             5,
-            'BB',
+            'vs BB',
             call_bb_vs_fourbet_lj,
             call_bb_vs_fourbet_hj,
             call_bb_vs_fourbet_co,

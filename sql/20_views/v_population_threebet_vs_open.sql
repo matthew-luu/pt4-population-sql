@@ -7,13 +7,13 @@ SELECT
     ROUND(
         100.0 * SUM(t.threebet_cnt) FILTER (
             WHERE
-                t.threebettor_pos = 2
-                AND t.opener_pos = 3
+                t.defend_pos = 2
+                AND t.open_pos = 3
         ) / NULLIF(
-            SUM(t.threebet_opp) FILTER (
+            SUM(t.def_opp) FILTER (
                 WHERE
-                    t.threebettor_pos = 2
-                    AND t.opener_pos = 3
+                    t.defend_pos = 2
+                    AND t.open_pos = 3
             ),
             0
         ),
@@ -22,13 +22,13 @@ SELECT
     ROUND(
         100.0 * SUM(t.threebet_cnt) FILTER (
             WHERE
-                t.threebettor_pos = 1
-                AND t.opener_pos = 3
+                t.defend_pos = 1
+                AND t.open_pos = 3
         ) / NULLIF(
-            SUM(t.threebet_opp) FILTER (
+            SUM(t.def_opp) FILTER (
                 WHERE
-                    t.threebettor_pos = 1
-                    AND t.opener_pos = 3
+                    t.defend_pos = 1
+                    AND t.open_pos = 3
             ),
             0
         ),
@@ -37,13 +37,13 @@ SELECT
     ROUND(
         100.0 * SUM(t.threebet_cnt) FILTER (
             WHERE
-                t.threebettor_pos = 1
-                AND t.opener_pos = 2
+                t.defend_pos = 1
+                AND t.open_pos = 2
         ) / NULLIF(
-            SUM(t.threebet_opp) FILTER (
+            SUM(t.def_opp) FILTER (
                 WHERE
-                    t.threebettor_pos = 1
-                    AND t.opener_pos = 2
+                    t.defend_pos = 1
+                    AND t.open_pos = 2
             ),
             0
         ),
@@ -52,13 +52,13 @@ SELECT
     ROUND(
         100.0 * SUM(t.threebet_cnt) FILTER (
             WHERE
-                t.threebettor_pos = 0
-                AND t.opener_pos = 3
+                t.defend_pos = 0
+                AND t.open_pos = 3
         ) / NULLIF(
-            SUM(t.threebet_opp) FILTER (
+            SUM(t.def_opp) FILTER (
                 WHERE
-                    t.threebettor_pos = 0
-                    AND t.opener_pos = 3
+                    t.defend_pos = 0
+                    AND t.open_pos = 3
             ),
             0
         ),
@@ -67,13 +67,13 @@ SELECT
     ROUND(
         100.0 * SUM(t.threebet_cnt) FILTER (
             WHERE
-                t.threebettor_pos = 0
-                AND t.opener_pos = 2
+                t.defend_pos = 0
+                AND t.open_pos = 2
         ) / NULLIF(
-            SUM(t.threebet_opp) FILTER (
+            SUM(t.def_opp) FILTER (
                 WHERE
-                    t.threebettor_pos = 0
-                    AND t.opener_pos = 2
+                    t.defend_pos = 0
+                    AND t.open_pos = 2
             ),
             0
         ),
@@ -82,13 +82,13 @@ SELECT
     ROUND(
         100.0 * SUM(t.threebet_cnt) FILTER (
             WHERE
-                t.threebettor_pos = 0
-                AND t.opener_pos = 1
+                t.defend_pos = 0
+                AND t.open_pos = 1
         ) / NULLIF(
-            SUM(t.threebet_opp) FILTER (
+            SUM(t.def_opp) FILTER (
                 WHERE
-                    t.threebettor_pos = 0
-                    AND t.opener_pos = 1
+                    t.defend_pos = 0
+                    AND t.open_pos = 1
             ),
             0
         ),
@@ -97,13 +97,13 @@ SELECT
     ROUND(
         100.0 * SUM(t.threebet_cnt) FILTER (
             WHERE
-                t.threebettor_pos = 9
-                AND t.opener_pos = 3
+                t.defend_pos = 9
+                AND t.open_pos = 3
         ) / NULLIF(
-            SUM(t.threebet_opp) FILTER (
+            SUM(t.def_opp) FILTER (
                 WHERE
-                    t.threebettor_pos = 9
-                    AND t.opener_pos = 3
+                    t.defend_pos = 9
+                    AND t.open_pos = 3
             ),
             0
         ),
@@ -112,13 +112,13 @@ SELECT
     ROUND(
         100.0 * SUM(t.threebet_cnt) FILTER (
             WHERE
-                t.threebettor_pos = 9
-                AND t.opener_pos = 2
+                t.defend_pos = 9
+                AND t.open_pos = 2
         ) / NULLIF(
-            SUM(t.threebet_opp) FILTER (
+            SUM(t.def_opp) FILTER (
                 WHERE
-                    t.threebettor_pos = 9
-                    AND t.opener_pos = 2
+                    t.defend_pos = 9
+                    AND t.open_pos = 2
             ),
             0
         ),
@@ -127,13 +127,13 @@ SELECT
     ROUND(
         100.0 * SUM(t.threebet_cnt) FILTER (
             WHERE
-                t.threebettor_pos = 9
-                AND t.opener_pos = 1
+                t.defend_pos = 9
+                AND t.open_pos = 1
         ) / NULLIF(
-            SUM(t.threebet_opp) FILTER (
+            SUM(t.def_opp) FILTER (
                 WHERE
-                    t.threebettor_pos = 9
-                    AND t.opener_pos = 1
+                    t.defend_pos = 9
+                    AND t.open_pos = 1
             ),
             0
         ),
@@ -142,13 +142,13 @@ SELECT
     ROUND(
         100.0 * SUM(t.threebet_cnt) FILTER (
             WHERE
-                t.threebettor_pos = 9
-                AND t.opener_pos = 0
+                t.defend_pos = 9
+                AND t.open_pos = 0
         ) / NULLIF(
-            SUM(t.threebet_opp) FILTER (
+            SUM(t.def_opp) FILTER (
                 WHERE
-                    t.threebettor_pos = 9
-                    AND t.opener_pos = 0
+                    t.defend_pos = 9
+                    AND t.open_pos = 0
             ),
             0
         ),
@@ -157,13 +157,13 @@ SELECT
     ROUND(
         100.0 * SUM(t.threebet_cnt) FILTER (
             WHERE
-                t.threebettor_pos = 8
-                AND t.opener_pos = 3
+                t.defend_pos = 8
+                AND t.open_pos = 3
         ) / NULLIF(
-            SUM(t.threebet_opp) FILTER (
+            SUM(t.def_opp) FILTER (
                 WHERE
-                    t.threebettor_pos = 8
-                    AND t.opener_pos = 3
+                    t.defend_pos = 8
+                    AND t.open_pos = 3
             ),
             0
         ),
@@ -172,13 +172,13 @@ SELECT
     ROUND(
         100.0 * SUM(t.threebet_cnt) FILTER (
             WHERE
-                t.threebettor_pos = 8
-                AND t.opener_pos = 2
+                t.defend_pos = 8
+                AND t.open_pos = 2
         ) / NULLIF(
-            SUM(t.threebet_opp) FILTER (
+            SUM(t.def_opp) FILTER (
                 WHERE
-                    t.threebettor_pos = 8
-                    AND t.opener_pos = 2
+                    t.defend_pos = 8
+                    AND t.open_pos = 2
             ),
             0
         ),
@@ -187,13 +187,13 @@ SELECT
     ROUND(
         100.0 * SUM(t.threebet_cnt) FILTER (
             WHERE
-                t.threebettor_pos = 8
-                AND t.opener_pos = 1
+                t.defend_pos = 8
+                AND t.open_pos = 1
         ) / NULLIF(
-            SUM(t.threebet_opp) FILTER (
+            SUM(t.def_opp) FILTER (
                 WHERE
-                    t.threebettor_pos = 8
-                    AND t.opener_pos = 1
+                    t.defend_pos = 8
+                    AND t.open_pos = 1
             ),
             0
         ),
@@ -202,13 +202,13 @@ SELECT
     ROUND(
         100.0 * SUM(t.threebet_cnt) FILTER (
             WHERE
-                t.threebettor_pos = 8
-                AND t.opener_pos = 0
+                t.defend_pos = 8
+                AND t.open_pos = 0
         ) / NULLIF(
-            SUM(t.threebet_opp) FILTER (
+            SUM(t.def_opp) FILTER (
                 WHERE
-                    t.threebettor_pos = 8
-                    AND t.opener_pos = 0
+                    t.defend_pos = 8
+                    AND t.open_pos = 0
             ),
             0
         ),
@@ -217,19 +217,19 @@ SELECT
     ROUND(
         100.0 * SUM(t.threebet_cnt) FILTER (
             WHERE
-                t.threebettor_pos = 8
-                AND t.opener_pos = 9
+                t.defend_pos = 8
+                AND t.open_pos = 9
         ) / NULLIF(
-            SUM(t.threebet_opp) FILTER (
+            SUM(t.def_opp) FILTER (
                 WHERE
-                    t.threebettor_pos = 8
-                    AND t.opener_pos = 9
+                    t.defend_pos = 8
+                    AND t.open_pos = 9
             ),
             0
         ),
         2
     ) AS threebet_bb_vs_sb
 FROM
-    pop.mv_player_threebet_vs_open_counts t
+    pop.mv_player_response_vs_open_counts t
 GROUP BY
     t.id_limit

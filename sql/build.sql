@@ -12,8 +12,7 @@
 
 \echo ===== Building materialized views =====
 \i sql/10_materialized_views/mv_player_rfi_counts.sql
-\i sql/10_materialized_views/mv_player_call_vs_open_counts.sql
-\i sql/10_materialized_views/mv_player_threebet_vs_open_counts.sql
+\i sql/10_materialized_views/mv_player_response_vs_open_counts.sql
 \i sql/10_materialized_views/mv_player_response_vs_threebet_counts.sql
 \i sql/10_materialized_views/mv_player_response_vs_fourbet_counts.sql
 
