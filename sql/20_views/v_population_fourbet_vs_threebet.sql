@@ -7,12 +7,12 @@ SELECT
     ROUND(
         100.0 * SUM(fb.fourbet_cnt) FILTER (
             WHERE
-                fb.fourbettor_pos = 3
+                fb.defend_pos = 3
                 AND fb.threebettor_pos = 2
         ) / NULLIF(
-            SUM(fb.fourbet_opp) FILTER (
+            SUM(fb.defend_opp) FILTER (
                 WHERE
-                    fb.fourbettor_pos = 3
+                    fb.defend_pos = 3
                     AND fb.threebettor_pos = 2
             ),
             0
@@ -22,12 +22,12 @@ SELECT
     ROUND(
         100.0 * SUM(fb.fourbet_cnt) FILTER (
             WHERE
-                fb.fourbettor_pos = 3
+                fb.defend_pos = 3
                 AND fb.threebettor_pos = 1
         ) / NULLIF(
-            SUM(fb.fourbet_opp) FILTER (
+            SUM(fb.defend_opp) FILTER (
                 WHERE
-                    fb.fourbettor_pos = 3
+                    fb.defend_pos = 3
                     AND fb.threebettor_pos = 1
             ),
             0
@@ -37,12 +37,12 @@ SELECT
     ROUND(
         100.0 * SUM(fb.fourbet_cnt) FILTER (
             WHERE
-                fb.fourbettor_pos = 3
+                fb.defend_pos = 3
                 AND fb.threebettor_pos = 0
         ) / NULLIF(
-            SUM(fb.fourbet_opp) FILTER (
+            SUM(fb.defend_opp) FILTER (
                 WHERE
-                    fb.fourbettor_pos = 3
+                    fb.defend_pos = 3
                     AND fb.threebettor_pos = 0
             ),
             0
@@ -52,12 +52,12 @@ SELECT
     ROUND(
         100.0 * SUM(fb.fourbet_cnt) FILTER (
             WHERE
-                fb.fourbettor_pos = 3
+                fb.defend_pos = 3
                 AND fb.threebettor_pos = 9
         ) / NULLIF(
-            SUM(fb.fourbet_opp) FILTER (
+            SUM(fb.defend_opp) FILTER (
                 WHERE
-                    fb.fourbettor_pos = 3
+                    fb.defend_pos = 3
                     AND fb.threebettor_pos = 9
             ),
             0
@@ -67,12 +67,12 @@ SELECT
     ROUND(
         100.0 * SUM(fb.fourbet_cnt) FILTER (
             WHERE
-                fb.fourbettor_pos = 3
+                fb.defend_pos = 3
                 AND fb.threebettor_pos = 8
         ) / NULLIF(
-            SUM(fb.fourbet_opp) FILTER (
+            SUM(fb.defend_opp) FILTER (
                 WHERE
-                    fb.fourbettor_pos = 3
+                    fb.defend_pos = 3
                     AND fb.threebettor_pos = 8
             ),
             0
@@ -82,12 +82,12 @@ SELECT
     ROUND(
         100.0 * SUM(fb.fourbet_cnt) FILTER (
             WHERE
-                fb.fourbettor_pos = 2
+                fb.defend_pos = 2
                 AND fb.threebettor_pos = 1
         ) / NULLIF(
-            SUM(fb.fourbet_opp) FILTER (
+            SUM(fb.defend_opp) FILTER (
                 WHERE
-                    fb.fourbettor_pos = 2
+                    fb.defend_pos = 2
                     AND fb.threebettor_pos = 1
             ),
             0
@@ -97,12 +97,12 @@ SELECT
     ROUND(
         100.0 * SUM(fb.fourbet_cnt) FILTER (
             WHERE
-                fb.fourbettor_pos = 2
+                fb.defend_pos = 2
                 AND fb.threebettor_pos = 0
         ) / NULLIF(
-            SUM(fb.fourbet_opp) FILTER (
+            SUM(fb.defend_opp) FILTER (
                 WHERE
-                    fb.fourbettor_pos = 2
+                    fb.defend_pos = 2
                     AND fb.threebettor_pos = 0
             ),
             0
@@ -112,12 +112,12 @@ SELECT
     ROUND(
         100.0 * SUM(fb.fourbet_cnt) FILTER (
             WHERE
-                fb.fourbettor_pos = 2
+                fb.defend_pos = 2
                 AND fb.threebettor_pos = 9
         ) / NULLIF(
-            SUM(fb.fourbet_opp) FILTER (
+            SUM(fb.defend_opp) FILTER (
                 WHERE
-                    fb.fourbettor_pos = 2
+                    fb.defend_pos = 2
                     AND fb.threebettor_pos = 9
             ),
             0
@@ -127,12 +127,12 @@ SELECT
     ROUND(
         100.0 * SUM(fb.fourbet_cnt) FILTER (
             WHERE
-                fb.fourbettor_pos = 2
+                fb.defend_pos = 2
                 AND fb.threebettor_pos = 8
         ) / NULLIF(
-            SUM(fb.fourbet_opp) FILTER (
+            SUM(fb.defend_opp) FILTER (
                 WHERE
-                    fb.fourbettor_pos = 2
+                    fb.defend_pos = 2
                     AND fb.threebettor_pos = 8
             ),
             0
@@ -142,12 +142,12 @@ SELECT
     ROUND(
         100.0 * SUM(fb.fourbet_cnt) FILTER (
             WHERE
-                fb.fourbettor_pos = 1
+                fb.defend_pos = 1
                 AND fb.threebettor_pos = 0
         ) / NULLIF(
-            SUM(fb.fourbet_opp) FILTER (
+            SUM(fb.defend_opp) FILTER (
                 WHERE
-                    fb.fourbettor_pos = 1
+                    fb.defend_pos = 1
                     AND fb.threebettor_pos = 0
             ),
             0
@@ -157,12 +157,12 @@ SELECT
     ROUND(
         100.0 * SUM(fb.fourbet_cnt) FILTER (
             WHERE
-                fb.fourbettor_pos = 1
+                fb.defend_pos = 1
                 AND fb.threebettor_pos = 9
         ) / NULLIF(
-            SUM(fb.fourbet_opp) FILTER (
+            SUM(fb.defend_opp) FILTER (
                 WHERE
-                    fb.fourbettor_pos = 1
+                    fb.defend_pos = 1
                     AND fb.threebettor_pos = 9
             ),
             0
@@ -172,12 +172,12 @@ SELECT
     ROUND(
         100.0 * SUM(fb.fourbet_cnt) FILTER (
             WHERE
-                fb.fourbettor_pos = 1
+                fb.defend_pos = 1
                 AND fb.threebettor_pos = 8
         ) / NULLIF(
-            SUM(fb.fourbet_opp) FILTER (
+            SUM(fb.defend_opp) FILTER (
                 WHERE
-                    fb.fourbettor_pos = 1
+                    fb.defend_pos = 1
                     AND fb.threebettor_pos = 8
             ),
             0
@@ -187,12 +187,12 @@ SELECT
     ROUND(
         100.0 * SUM(fb.fourbet_cnt) FILTER (
             WHERE
-                fb.fourbettor_pos = 0
+                fb.defend_pos = 0
                 AND fb.threebettor_pos = 9
         ) / NULLIF(
-            SUM(fb.fourbet_opp) FILTER (
+            SUM(fb.defend_opp) FILTER (
                 WHERE
-                    fb.fourbettor_pos = 0
+                    fb.defend_pos = 0
                     AND fb.threebettor_pos = 9
             ),
             0
@@ -202,12 +202,12 @@ SELECT
     ROUND(
         100.0 * SUM(fb.fourbet_cnt) FILTER (
             WHERE
-                fb.fourbettor_pos = 0
+                fb.defend_pos = 0
                 AND fb.threebettor_pos = 8
         ) / NULLIF(
-            SUM(fb.fourbet_opp) FILTER (
+            SUM(fb.defend_opp) FILTER (
                 WHERE
-                    fb.fourbettor_pos = 0
+                    fb.defend_pos = 0
                     AND fb.threebettor_pos = 8
             ),
             0
@@ -217,12 +217,12 @@ SELECT
     ROUND(
         100.0 * SUM(fb.fourbet_cnt) FILTER (
             WHERE
-                fb.fourbettor_pos = 9
+                fb.defend_pos = 9
                 AND fb.threebettor_pos = 8
         ) / NULLIF(
-            SUM(fb.fourbet_opp) FILTER (
+            SUM(fb.defend_opp) FILTER (
                 WHERE
-                    fb.fourbettor_pos = 9
+                    fb.defend_pos = 9
                     AND fb.threebettor_pos = 8
             ),
             0
@@ -230,6 +230,6 @@ SELECT
         2
     ) AS fourbet_sb_vs_bb
 FROM
-    pop.mv_player_fourbet_vs_threebet_counts fb
+    pop.mv_player_response_vs_threebet_counts fb
 GROUP BY
     fb.id_limit

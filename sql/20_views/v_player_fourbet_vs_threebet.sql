@@ -10,12 +10,12 @@ SELECT
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
         threebettor_pos = 8
-        AND fourbettor_pos = 9
+        AND defend_pos = 9
     ) / NULLIF(
-      SUM(fourbet_opp) FILTER (
+      SUM(defend_opp) FILTER (
         WHERE
           threebettor_pos = 8
-          AND fourbettor_pos = 9
+          AND defend_pos = 9
       ),
       0
     ),
@@ -26,12 +26,12 @@ SELECT
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
         threebettor_pos = 8
-        AND fourbettor_pos = 0
+        AND defend_pos = 0
     ) / NULLIF(
-      SUM(fourbet_opp) FILTER (
+      SUM(defend_opp) FILTER (
         WHERE
           threebettor_pos = 8
-          AND fourbettor_pos = 0
+          AND defend_pos = 0
       ),
       0
     ),
@@ -41,12 +41,12 @@ SELECT
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
         threebettor_pos = 9
-        AND fourbettor_pos = 0
+        AND defend_pos = 0
     ) / NULLIF(
-      SUM(fourbet_opp) FILTER (
+      SUM(defend_opp) FILTER (
         WHERE
           threebettor_pos = 9
-          AND fourbettor_pos = 0
+          AND defend_pos = 0
       ),
       0
     ),
@@ -57,12 +57,12 @@ SELECT
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
         threebettor_pos = 8
-        AND fourbettor_pos = 1
+        AND defend_pos = 1
     ) / NULLIF(
-      SUM(fourbet_opp) FILTER (
+      SUM(defend_opp) FILTER (
         WHERE
           threebettor_pos = 8
-          AND fourbettor_pos = 1
+          AND defend_pos = 1
       ),
       0
     ),
@@ -72,12 +72,12 @@ SELECT
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
         threebettor_pos = 9
-        AND fourbettor_pos = 1
+        AND defend_pos = 1
     ) / NULLIF(
-      SUM(fourbet_opp) FILTER (
+      SUM(defend_opp) FILTER (
         WHERE
           threebettor_pos = 9
-          AND fourbettor_pos = 1
+          AND defend_pos = 1
       ),
       0
     ),
@@ -87,12 +87,12 @@ SELECT
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
         threebettor_pos = 0
-        AND fourbettor_pos = 1
+        AND defend_pos = 1
     ) / NULLIF(
-      SUM(fourbet_opp) FILTER (
+      SUM(defend_opp) FILTER (
         WHERE
           threebettor_pos = 0
-          AND fourbettor_pos = 1
+          AND defend_pos = 1
       ),
       0
     ),
@@ -103,12 +103,12 @@ SELECT
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
         threebettor_pos = 8
-        AND fourbettor_pos = 2
+        AND defend_pos = 2
     ) / NULLIF(
-      SUM(fourbet_opp) FILTER (
+      SUM(defend_opp) FILTER (
         WHERE
           threebettor_pos = 8
-          AND fourbettor_pos = 2
+          AND defend_pos = 2
       ),
       0
     ),
@@ -118,12 +118,12 @@ SELECT
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
         threebettor_pos = 9
-        AND fourbettor_pos = 2
+        AND defend_pos = 2
     ) / NULLIF(
-      SUM(fourbet_opp) FILTER (
+      SUM(defend_opp) FILTER (
         WHERE
           threebettor_pos = 9
-          AND fourbettor_pos = 2
+          AND defend_pos = 2
       ),
       0
     ),
@@ -133,12 +133,12 @@ SELECT
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
         threebettor_pos = 0
-        AND fourbettor_pos = 2
+        AND defend_pos = 2
     ) / NULLIF(
-      SUM(fourbet_opp) FILTER (
+      SUM(defend_opp) FILTER (
         WHERE
           threebettor_pos = 0
-          AND fourbettor_pos = 2
+          AND defend_pos = 2
       ),
       0
     ),
@@ -148,12 +148,12 @@ SELECT
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
         threebettor_pos = 1
-        AND fourbettor_pos = 2
+        AND defend_pos = 2
     ) / NULLIF(
-      SUM(fourbet_opp) FILTER (
+      SUM(defend_opp) FILTER (
         WHERE
           threebettor_pos = 1
-          AND fourbettor_pos = 2
+          AND defend_pos = 2
       ),
       0
     ),
@@ -164,12 +164,12 @@ SELECT
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
         threebettor_pos = 8
-        AND fourbettor_pos = 3
+        AND defend_pos = 3
     ) / NULLIF(
-      SUM(fourbet_opp) FILTER (
+      SUM(defend_opp) FILTER (
         WHERE
           threebettor_pos = 8
-          AND fourbettor_pos = 3
+          AND defend_pos = 3
       ),
       0
     ),
@@ -179,12 +179,12 @@ SELECT
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
         threebettor_pos = 9
-        AND fourbettor_pos = 3
+        AND defend_pos = 3
     ) / NULLIF(
-      SUM(fourbet_opp) FILTER (
+      SUM(defend_opp) FILTER (
         WHERE
           threebettor_pos = 9
-          AND fourbettor_pos = 3
+          AND defend_pos = 3
       ),
       0
     ),
@@ -194,12 +194,12 @@ SELECT
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
         threebettor_pos = 0
-        AND fourbettor_pos = 3
+        AND defend_pos = 3
     ) / NULLIF(
-      SUM(fourbet_opp) FILTER (
+      SUM(defend_opp) FILTER (
         WHERE
           threebettor_pos = 0
-          AND fourbettor_pos = 3
+          AND defend_pos = 3
       ),
       0
     ),
@@ -209,12 +209,12 @@ SELECT
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
         threebettor_pos = 1
-        AND fourbettor_pos = 3
+        AND defend_pos = 3
     ) / NULLIF(
-      SUM(fourbet_opp) FILTER (
+      SUM(defend_opp) FILTER (
         WHERE
           threebettor_pos = 1
-          AND fourbettor_pos = 3
+          AND defend_pos = 3
       ),
       0
     ),
@@ -224,19 +224,19 @@ SELECT
     100.0 * SUM(fourbet_cnt) FILTER (
       WHERE
         threebettor_pos = 2
-        AND fourbettor_pos = 3
+        AND defend_pos = 3
     ) / NULLIF(
-      SUM(fourbet_opp) FILTER (
+      SUM(defend_opp) FILTER (
         WHERE
           threebettor_pos = 2
-          AND fourbettor_pos = 3
+          AND defend_pos = 3
       ),
       0
     ),
     2
   ) AS fourbet_lj_vs_hj
 FROM
-  pop.mv_player_fourbet_vs_threebet_counts
+  pop.mv_player_response_vs_threebet_counts
 GROUP BY
   id_player,
   id_limit;
