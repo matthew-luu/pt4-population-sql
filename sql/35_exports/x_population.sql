@@ -1,0 +1,1 @@
+\copy (SELECT * FROM pop.v_population_preflop WHERE id_limit = 2 ORDER BY id_limit) TO './Exported Reports/population.csv' CSV HEADER

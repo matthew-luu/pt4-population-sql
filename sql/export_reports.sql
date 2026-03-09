@@ -9,3 +9,6 @@
 \i sql/35_exports/x_population_fourbet_vs_threebet.sql
 \i sql/35_exports/x_population_fold_vs_threebet.sql
 \i sql/35_exports/x_population_preflop.sql
+
+-- Custom reports
+\i sql/35_exports/x_population.sql
