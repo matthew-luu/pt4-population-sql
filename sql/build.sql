@@ -52,4 +52,6 @@
 \i sql/20_views/v_population_call_vs_fourbet.sql
 \i sql/20_views/v_population_fivebet_vs_fourbet.sql
 \i sql/20_views/v_population_fold_vs_fourbet.sql
+
+\i sql/20_views/v_population_opportunity_counts.sql
 \i sql/20_views/v_population_preflop.sql
