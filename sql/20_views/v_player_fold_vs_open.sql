@@ -3,74 +3,585 @@ DROP VIEW IF EXISTS pop.v_player_fold_vs_open;
 CREATE VIEW
     pop.v_player_fold_vs_open AS
 SELECT
-    tb.id_player,
-    tb.id_limit,
+    id_player,
+    id_limit,
     /* ---------- Defender HJ (2) ---------- */
     ROUND(
-        100.0 - COALESCE(tb.threebet_hj_vs_lj, 0) - COALESCE(c.call_hj_vs_lj, 0),
+        100.0 - COALESCE(
+            ROUND(
+                100.0 * SUM(threebet_cnt) FILTER (
+                    WHERE
+                        defend_pos = 2
+                        AND open_pos = 3
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 2
+                            AND open_pos = 3
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ) - COALESCE(
+            ROUND(
+                100.0 * SUM(call_cnt) FILTER (
+                    WHERE
+                        defend_pos = 2
+                        AND open_pos = 3
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 2
+                            AND open_pos = 3
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ),
         2
-    ) AS fold_hj_vs_lj,
+    ) AS fold_hj_vs_open_lj,
     /* ---------- Defender CO (1) ---------- */
     ROUND(
-        100.0 - COALESCE(tb.threebet_co_vs_lj, 0) - COALESCE(c.call_co_vs_lj, 0),
+        100.0 - COALESCE(
+            ROUND(
+                100.0 * SUM(threebet_cnt) FILTER (
+                    WHERE
+                        defend_pos = 1
+                        AND open_pos = 3
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 1
+                            AND open_pos = 3
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ) - COALESCE(
+            ROUND(
+                100.0 * SUM(call_cnt) FILTER (
+                    WHERE
+                        defend_pos = 1
+                        AND open_pos = 3
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 1
+                            AND open_pos = 3
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ),
         2
-    ) AS fold_co_vs_lj,
+    ) AS fold_co_vs_open_lj,
     ROUND(
-        100.0 - COALESCE(tb.threebet_co_vs_hj, 0) - COALESCE(c.call_co_vs_hj, 0),
+        100.0 - COALESCE(
+            ROUND(
+                100.0 * SUM(threebet_cnt) FILTER (
+                    WHERE
+                        defend_pos = 1
+                        AND open_pos = 2
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 1
+                            AND open_pos = 2
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ) - COALESCE(
+            ROUND(
+                100.0 * SUM(call_cnt) FILTER (
+                    WHERE
+                        defend_pos = 1
+                        AND open_pos = 2
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 1
+                            AND open_pos = 2
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ),
         2
-    ) AS fold_co_vs_hj,
+    ) AS fold_co_vs_open_hj,
     /* ---------- Defender BTN (0) ---------- */
     ROUND(
-        100.0 - COALESCE(tb.threebet_btn_vs_lj, 0) - COALESCE(c.call_btn_vs_lj, 0),
+        100.0 - COALESCE(
+            ROUND(
+                100.0 * SUM(threebet_cnt) FILTER (
+                    WHERE
+                        defend_pos = 0
+                        AND open_pos = 3
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 0
+                            AND open_pos = 3
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ) - COALESCE(
+            ROUND(
+                100.0 * SUM(call_cnt) FILTER (
+                    WHERE
+                        defend_pos = 0
+                        AND open_pos = 3
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 0
+                            AND open_pos = 3
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ),
         2
-    ) AS fold_btn_vs_lj,
+    ) AS fold_btn_vs_open_lj,
     ROUND(
-        100.0 - COALESCE(tb.threebet_btn_vs_hj, 0) - COALESCE(c.call_btn_vs_hj, 0),
+        100.0 - COALESCE(
+            ROUND(
+                100.0 * SUM(threebet_cnt) FILTER (
+                    WHERE
+                        defend_pos = 0
+                        AND open_pos = 2
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 0
+                            AND open_pos = 2
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ) - COALESCE(
+            ROUND(
+                100.0 * SUM(call_cnt) FILTER (
+                    WHERE
+                        defend_pos = 0
+                        AND open_pos = 2
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 0
+                            AND open_pos = 2
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ),
         2
-    ) AS fold_btn_vs_hj,
+    ) AS fold_btn_vs_open_hj,
     ROUND(
-        100.0 - COALESCE(tb.threebet_btn_vs_co, 0) - COALESCE(c.call_btn_vs_co, 0),
+        100.0 - COALESCE(
+            ROUND(
+                100.0 * SUM(threebet_cnt) FILTER (
+                    WHERE
+                        defend_pos = 0
+                        AND open_pos = 1
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 0
+                            AND open_pos = 1
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ) - COALESCE(
+            ROUND(
+                100.0 * SUM(call_cnt) FILTER (
+                    WHERE
+                        defend_pos = 0
+                        AND open_pos = 1
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 0
+                            AND open_pos = 1
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ),
         2
-    ) AS fold_btn_vs_co,
+    ) AS fold_btn_vs_open_co,
     /* ---------- Defender SB (9) ---------- */
     ROUND(
-        100.0 - COALESCE(tb.threebet_sb_vs_lj, 0) - COALESCE(c.call_sb_vs_lj, 0),
+        100.0 - COALESCE(
+            ROUND(
+                100.0 * SUM(threebet_cnt) FILTER (
+                    WHERE
+                        defend_pos = 9
+                        AND open_pos = 3
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 9
+                            AND open_pos = 3
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ) - COALESCE(
+            ROUND(
+                100.0 * SUM(call_cnt) FILTER (
+                    WHERE
+                        defend_pos = 9
+                        AND open_pos = 3
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 9
+                            AND open_pos = 3
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ),
         2
-    ) AS fold_sb_vs_lj,
+    ) AS fold_sb_vs_open_lj,
     ROUND(
-        100.0 - COALESCE(tb.threebet_sb_vs_hj, 0) - COALESCE(c.call_sb_vs_hj, 0),
+        100.0 - COALESCE(
+            ROUND(
+                100.0 * SUM(threebet_cnt) FILTER (
+                    WHERE
+                        defend_pos = 9
+                        AND open_pos = 2
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 9
+                            AND open_pos = 2
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ) - COALESCE(
+            ROUND(
+                100.0 * SUM(call_cnt) FILTER (
+                    WHERE
+                        defend_pos = 9
+                        AND open_pos = 2
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 9
+                            AND open_pos = 2
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ),
         2
-    ) AS fold_sb_vs_hj,
+    ) AS fold_sb_vs_open_hj,
     ROUND(
-        100.0 - COALESCE(tb.threebet_sb_vs_co, 0) - COALESCE(c.call_sb_vs_co, 0),
+        100.0 - COALESCE(
+            ROUND(
+                100.0 * SUM(threebet_cnt) FILTER (
+                    WHERE
+                        defend_pos = 9
+                        AND open_pos = 1
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 9
+                            AND open_pos = 1
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ) - COALESCE(
+            ROUND(
+                100.0 * SUM(call_cnt) FILTER (
+                    WHERE
+                        defend_pos = 9
+                        AND open_pos = 1
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 9
+                            AND open_pos = 1
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ),
         2
-    ) AS fold_sb_vs_co,
+    ) AS fold_sb_vs_open_co,
     ROUND(
-        100.0 - COALESCE(tb.threebet_sb_vs_btn, 0) - COALESCE(c.call_sb_vs_btn, 0),
+        100.0 - COALESCE(
+            ROUND(
+                100.0 * SUM(threebet_cnt) FILTER (
+                    WHERE
+                        defend_pos = 9
+                        AND open_pos = 0
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 9
+                            AND open_pos = 0
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ) - COALESCE(
+            ROUND(
+                100.0 * SUM(call_cnt) FILTER (
+                    WHERE
+                        defend_pos = 9
+                        AND open_pos = 0
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 9
+                            AND open_pos = 0
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ),
         2
-    ) AS fold_sb_vs_btn,
+    ) AS fold_sb_vs_open_btn,
     /* ---------- Defender BB (8) ---------- */
     ROUND(
-        100.0 - COALESCE(tb.threebet_bb_vs_lj, 0) - COALESCE(c.call_bb_vs_lj, 0),
+        100.0 - COALESCE(
+            ROUND(
+                100.0 * SUM(threebet_cnt) FILTER (
+                    WHERE
+                        defend_pos = 8
+                        AND open_pos = 3
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 8
+                            AND open_pos = 3
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ) - COALESCE(
+            ROUND(
+                100.0 * SUM(call_cnt) FILTER (
+                    WHERE
+                        defend_pos = 8
+                        AND open_pos = 3
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 8
+                            AND open_pos = 3
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ),
         2
-    ) AS fold_bb_vs_lj,
+    ) AS fold_bb_vs_open_lj,
     ROUND(
-        100.0 - COALESCE(tb.threebet_bb_vs_hj, 0) - COALESCE(c.call_bb_vs_hj, 0),
+        100.0 - COALESCE(
+            ROUND(
+                100.0 * SUM(threebet_cnt) FILTER (
+                    WHERE
+                        defend_pos = 8
+                        AND open_pos = 2
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 8
+                            AND open_pos = 2
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ) - COALESCE(
+            ROUND(
+                100.0 * SUM(call_cnt) FILTER (
+                    WHERE
+                        defend_pos = 8
+                        AND open_pos = 2
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 8
+                            AND open_pos = 2
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ),
         2
-    ) AS fold_bb_vs_hj,
+    ) AS fold_bb_vs_open_hj,
     ROUND(
-        100.0 - COALESCE(tb.threebet_bb_vs_co, 0) - COALESCE(c.call_bb_vs_co, 0),
+        100.0 - COALESCE(
+            ROUND(
+                100.0 * SUM(threebet_cnt) FILTER (
+                    WHERE
+                        defend_pos = 8
+                        AND open_pos = 1
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 8
+                            AND open_pos = 1
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ) - COALESCE(
+            ROUND(
+                100.0 * SUM(call_cnt) FILTER (
+                    WHERE
+                        defend_pos = 8
+                        AND open_pos = 1
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 8
+                            AND open_pos = 1
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ),
         2
-    ) AS fold_bb_vs_co,
+    ) AS fold_bb_vs_open_co,
     ROUND(
-        100.0 - COALESCE(tb.threebet_bb_vs_btn, 0) - COALESCE(c.call_bb_vs_btn, 0),
+        100.0 - COALESCE(
+            ROUND(
+                100.0 * SUM(threebet_cnt) FILTER (
+                    WHERE
+                        defend_pos = 8
+                        AND open_pos = 0
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 8
+                            AND open_pos = 0
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ) - COALESCE(
+            ROUND(
+                100.0 * SUM(call_cnt) FILTER (
+                    WHERE
+                        defend_pos = 8
+                        AND open_pos = 0
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 8
+                            AND open_pos = 0
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ),
         2
-    ) AS fold_bb_vs_btn,
+    ) AS fold_bb_vs_open_btn,
     ROUND(
-        100.0 - COALESCE(tb.threebet_bb_vs_sb, 0) - COALESCE(c.call_bb_vs_sb, 0),
+        100.0 - COALESCE(
+            ROUND(
+                100.0 * SUM(threebet_cnt) FILTER (
+                    WHERE
+                        defend_pos = 8
+                        AND open_pos = 9
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 8
+                            AND open_pos = 9
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ) - COALESCE(
+            ROUND(
+                100.0 * SUM(call_cnt) FILTER (
+                    WHERE
+                        defend_pos = 8
+                        AND open_pos = 9
+                ) / NULLIF(
+                    SUM(def_opp) FILTER (
+                        WHERE
+                            defend_pos = 8
+                            AND open_pos = 9
+                    ),
+                    0
+                ),
+                2
+            ),
+            0
+        ),
         2
-    ) AS fold_bb_vs_sb
+    ) AS fold_bb_vs_open_sb
 FROM
-    pop.v_player_threebet_vs_open tb
-    LEFT JOIN pop.v_player_call_vs_open c ON tb.id_player = c.id_player
-    AND tb.id_limit = c.id_limit;
+    mv_player_response_vs_open_counts
+GROUP BY
+    id_player,
+    id_limit;

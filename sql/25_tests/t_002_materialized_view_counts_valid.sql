@@ -10,18 +10,18 @@ BEGIN
 
     IF EXISTS (
         SELECT 1
-        FROM pop.mv_player_call_vs_open_counts
-        WHERE call_vs_open > def_opp
+        FROM pop.mv_player_response_vs_open_counts
+        WHERE call_cnt > def_opp
     ) THEN
-        RAISE EXCEPTION 't_002 failed: mv_player_call_vs_open_counts has call_vs_open > def_opp';
+        RAISE EXCEPTION 't_002 failed: mv_player_call_vs_open_counts has call_cnt > def_opp';
     END IF;
 
     IF EXISTS (
         SELECT 1
-        FROM pop.mv_player_threebet_vs_open_counts
-        WHERE threebet_cnt > threebet_opp
+        FROM pop.mv_player_response_vs_open_counts
+        WHERE threebet_cnt > def_opp
     ) THEN
-        RAISE EXCEPTION 't_002 failed: mv_player_threebet_vs_open_counts has threebet_cnt > threebet_opp';
+        RAISE EXCEPTION 't_002 failed: mv_player_threebet_vs_open_counts has threebet_cnt > def_opp';
     END IF;
 
     IF EXISTS (
