@@ -9,10 +9,26 @@ SELECT
     r.amt_bb,
     r.player_count,
     r.total_hands,
-    oc.rfi_opp_total,
-    oc.vs_open_opp_total,
-    oc.vs_threebet_opp_total,
-    oc.vs_fourbet_opp_total,
+    oc.rfi_lj_opp,
+    oc.rfi_hj_opp,
+    oc.rfi_co_opp,
+    oc.rfi_btn_opp,
+    oc.rfi_sb_opp,
+    oc.vs_open_lj_opp,
+    oc.vs_open_hj_opp,
+    oc.vs_open_co_opp,
+    oc.vs_open_btn_opp,
+    oc.vs_open_sb_opp,
+    oc.vs_threebet_lj_opp,
+    oc.vs_threebet_hj_opp,
+    oc.vs_threebet_co_opp,
+    oc.vs_threebet_btn_opp,
+    oc.vs_threebet_sb_opp,
+    oc.vs_fourbet_hj_opp,
+    oc.vs_fourbet_co_opp,
+    oc.vs_fourbet_btn_opp,
+    oc.vs_fourbet_sb_opp,
+    oc.vs_fourbet_bb_opp,
     r.rfi_lj,
     r.rfi_hj,
     r.rfi_co,
@@ -155,7 +171,7 @@ SELECT
     f4.fold_bb_vs_fourbet_sb
 FROM
     pop.v_population_rfi r
-        LEFT JOIN pop.v_population_opportunity_counts oc ON oc.id_limit = r.id_limit
+    LEFT JOIN pop.v_population_opportunity_counts oc ON oc.id_limit = r.id_limit
     LEFT JOIN pop.v_population_call_vs_open c ON c.id_limit = r.id_limit
     LEFT JOIN pop.v_population_threebet_vs_open t ON t.id_limit = r.id_limit
     LEFT JOIN pop.v_population_fold_vs_open f ON f.id_limit = r.id_limit
