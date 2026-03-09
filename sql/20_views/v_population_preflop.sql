@@ -103,7 +103,52 @@ SELECT
     fvt.fold_co_vs_threebet_bb,
     fvt.fold_btn_vs_threebet_sb,
     fvt.fold_btn_vs_threebet_bb,
-    fvt.fold_sb_vs_threebet_bb
+    fvt.fold_sb_vs_threebet_bb,
+    c4.call_hj_vs_fourbet_lj,
+    c4.call_co_vs_fourbet_lj,
+    c4.call_co_vs_fourbet_hj,
+    c4.call_btn_vs_fourbet_lj,
+    c4.call_btn_vs_fourbet_hj,
+    c4.call_btn_vs_fourbet_co,
+    c4.call_sb_vs_fourbet_lj,
+    c4.call_sb_vs_fourbet_hj,
+    c4.call_sb_vs_fourbet_co,
+    c4.call_sb_vs_fourbet_btn,
+    c4.call_bb_vs_fourbet_lj,
+    c4.call_bb_vs_fourbet_hj,
+    c4.call_bb_vs_fourbet_co,
+    c4.call_bb_vs_fourbet_btn,
+    c4.call_bb_vs_fourbet_sb,
+    f5.fivebet_hj_vs_fourbet_lj,
+    f5.fivebet_co_vs_fourbet_lj,
+    f5.fivebet_co_vs_fourbet_hj,
+    f5.fivebet_btn_vs_fourbet_lj,
+    f5.fivebet_btn_vs_fourbet_hj,
+    f5.fivebet_btn_vs_fourbet_co,
+    f5.fivebet_sb_vs_fourbet_lj,
+    f5.fivebet_sb_vs_fourbet_hj,
+    f5.fivebet_sb_vs_fourbet_co,
+    f5.fivebet_sb_vs_fourbet_btn,
+    f5.fivebet_bb_vs_fourbet_lj,
+    f5.fivebet_bb_vs_fourbet_hj,
+    f5.fivebet_bb_vs_fourbet_co,
+    f5.fivebet_bb_vs_fourbet_btn,
+    f5.fivebet_bb_vs_fourbet_sb,
+    f4.fold_hj_vs_fourbet_lj,
+    f4.fold_co_vs_fourbet_lj,
+    f4.fold_co_vs_fourbet_hj,
+    f4.fold_btn_vs_fourbet_lj,
+    f4.fold_btn_vs_fourbet_hj,
+    f4.fold_btn_vs_fourbet_co,
+    f4.fold_sb_vs_fourbet_lj,
+    f4.fold_sb_vs_fourbet_hj,
+    f4.fold_sb_vs_fourbet_co,
+    f4.fold_sb_vs_fourbet_btn,
+    f4.fold_bb_vs_fourbet_lj,
+    f4.fold_bb_vs_fourbet_hj,
+    f4.fold_bb_vs_fourbet_co,
+    f4.fold_bb_vs_fourbet_btn,
+    f4.fold_bb_vs_fourbet_sb
 FROM
     pop.v_population_rfi r
     LEFT JOIN pop.v_population_call_vs_open c ON c.id_limit = r.id_limit
@@ -111,4 +156,7 @@ FROM
     LEFT JOIN pop.v_population_fold_vs_open f ON f.id_limit = r.id_limit
     LEFT JOIN pop.v_population_fourbet_vs_threebet fb on fb.id_limit = r.id_limit
     LEFT JOIN pop.v_population_call_vs_threebet cvt on cvt.id_limit = r.id_limit
-    LEFT JOIN pop.v_population_fold_vs_threebet fvt on fvt.id_limit = r.id_limit;
+    LEFT JOIN pop.v_population_fold_vs_threebet fvt on fvt.id_limit = r.id_limit
+    LEFT JOIN pop.v_population_call_vs_fourbet c4 ON c4.id_limit = r.id_limit
+    LEFT JOIN pop.v_population_fivebet_vs_fourbet f5 ON f5.id_limit = r.id_limit
+    LEFT JOIN pop.v_population_fold_vs_fourbet f4 ON f4.id_limit = r.id_limit;

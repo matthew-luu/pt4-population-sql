@@ -6,5 +6,6 @@
 \i sql/25_tests/t_003_population_percent_ranges.sql
 \i sql/25_tests/t_004_open_branch_sums.sql
 \i sql/25_tests/t_005_threebet_branch_sums.sql
+\i sql/25_tests/t_006_fourbet_branch_sums.sql
 
 \echo ===== Verification complete =====

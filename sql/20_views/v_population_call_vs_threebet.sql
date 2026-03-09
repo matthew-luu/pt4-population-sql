@@ -232,4 +232,4 @@ SELECT
 FROM
     pop.mv_player_response_vs_threebet_counts cvt
 GROUP BY
-    cvt.id_limit
+    cvt.id_limit;

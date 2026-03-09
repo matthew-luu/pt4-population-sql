@@ -1,6 +1,18 @@
 -- ops/clean.sql
 DROP VIEW IF EXISTS pop.v_population_preflop;
 
+DROP VIEW IF EXISTS pop.v_population_fold_vs_fourbet;
+
+DROP VIEW IF EXISTS pop.v_population_fivebet_vs_fourbet;
+
+DROP VIEW IF EXISTS pop.v_population_call_vs_fourbet;
+
+DROP VIEW IF EXISTS pop.v_player_fold_vs_fourbet;
+
+DROP VIEW IF EXISTS pop.v_player_call_vs_fourbet;
+
+DROP VIEW IF EXISTS pop.v_player_fivebet_vs_fourbet;
+
 DROP VIEW IF EXISTS pop.v_population_fold_vs_threebet;
 
 DROP VIEW IF EXISTS pop.v_population_call_vs_threebet;
@@ -28,6 +40,8 @@ DROP VIEW IF EXISTS pop.v_player_threebet_vs_open;
 DROP VIEW IF EXISTS pop.v_player_call_vs_open;
 
 DROP VIEW IF EXISTS pop.v_player_rfi;
+
+DROP MATERIALIZED VIEW IF EXISTS pop.mv_player_response_vs_fourbet_counts;
 
 DROP MATERIALIZED VIEW IF EXISTS pop.mv_player_response_vs_threebet_counts;
 

@@ -66,4 +66,4 @@ SELECT
     ) AS fold_sb_vs_threebet_bb
 FROM
     pop.v_population_fourbet_vs_threebet fb
-    FULL OUTER JOIN pop.v_population_call_vs_threebet cvt ON fb.id_limit = cvt.id_limit
+    FULL OUTER JOIN pop.v_population_call_vs_threebet cvt ON fb.id_limit = cvt.id_limit;
