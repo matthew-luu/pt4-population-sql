@@ -1,6 +1,8 @@
 --Poulation Views
 DROP VIEW IF EXISTS pop.v_population_preflop;
 
+DROP VIEW IF EXISTS pop.v_population_opportunity_counts;
+
 --  vs fourbet
 DROP VIEW IF EXISTS pop.v_population_fold_vs_fourbet;
 
