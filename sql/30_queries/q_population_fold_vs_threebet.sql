@@ -34,7 +34,7 @@ FROM
         UNION ALL
         SELECT
             2,
-            'vs hj',
+            'vs HJ',
             fold_lj_vs_3bet_hj,
             NULL,
             NULL,
