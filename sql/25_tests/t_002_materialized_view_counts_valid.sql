@@ -37,6 +37,6 @@ BEGIN
         FROM pop.mv_player_response_vs_threebet_counts
         WHERE call_cnt > defend_opp
     ) THEN
-        RAISE EXCEPTION 't_002 failed: mv_player_response_vs_threebet_counts has call_vs_threebet > defend_opp';
+        RAISE EXCEPTION 't_002 failed: mv_player_response_vs_threebet_counts has call_cnt > defend_opp';
     END IF;
 END $$;

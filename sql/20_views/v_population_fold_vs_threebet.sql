@@ -3,7 +3,7 @@ DROP VIEW IF EXISTS pop.v_population_fold_vs_threebet;
 CREATE VIEW
     pop.v_population_fold_vs_threebet AS
 SELECT
-    fb.id_limit AS id_limit,
+    COALESCE(fb.id_limit, cvt.id_limit) AS id_limit,
     ROUND(
         100.0 - COALESCE(fb.fourbet_lj_vs_hj, 0) - COALESCE(cvt.call_lj_vs_threebet_hj, 0),
         2
