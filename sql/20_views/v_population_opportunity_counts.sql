@@ -36,24 +36,24 @@ WITH
             id_limit,
             SUM(def_opp) FILTER (
                 WHERE
-                    open_pos = 3
-            ) AS vs_open_lj_opp,
+                    defend_pos = 2
+            ) AS hj_vs_open_opp,
             SUM(def_opp) FILTER (
                 WHERE
-                    open_pos = 2
-            ) AS vs_open_hj_opp,
+                    defend_pos = 1
+            ) AS co_vs_open_opp,
             SUM(def_opp) FILTER (
                 WHERE
-                    open_pos = 1
-            ) AS vs_open_co_opp,
+                    defend_pos = 0
+            ) AS btn_vs_open_opp,
             SUM(def_opp) FILTER (
                 WHERE
-                    open_pos = 0
-            ) AS vs_open_btn_opp,
+                    defend_pos = 9
+            ) AS sb_vs_open_opp,
             SUM(def_opp) FILTER (
                 WHERE
-                    open_pos = 9
-            ) AS vs_open_sb_opp
+                    defend_pos = 8
+            ) AS bb_vs_open_opp
         FROM
             pop.mv_player_response_vs_open_counts
         GROUP BY
@@ -65,23 +65,23 @@ WITH
             SUM(defend_opp) FILTER (
                 WHERE
                     defend_pos = 3
-            ) AS vs_threebet_lj_opp,
+            ) AS lj_vs_threebet_opp,
             SUM(defend_opp) FILTER (
                 WHERE
                     defend_pos = 2
-            ) AS vs_threebet_hj_opp,
+            ) AS hj_vs_threebet_opp,
             SUM(defend_opp) FILTER (
                 WHERE
                     defend_pos = 1
-            ) AS vs_threebet_co_opp,
+            ) AS co_vs_threebet_opp,
             SUM(defend_opp) FILTER (
                 WHERE
                     defend_pos = 0
-            ) AS vs_threebet_btn_opp,
+            ) AS btn_vs_threebet_opp,
             SUM(defend_opp) FILTER (
                 WHERE
                     defend_pos = 9
-            ) AS vs_threebet_sb_opp
+            ) AS sb_vs_threebet_opp
         FROM
             pop.mv_player_response_vs_threebet_counts
         GROUP BY
@@ -93,23 +93,23 @@ WITH
             SUM(fivebet_opp) FILTER (
                 WHERE
                     defender_pos = 2
-            ) AS vs_fourbet_hj_opp,
+            ) AS hj_vs_fourbet_opp,
             SUM(fivebet_opp) FILTER (
                 WHERE
                     defender_pos = 1
-            ) AS vs_fourbet_co_opp,
+            ) AS co_vs_fourbet_opp,
             SUM(fivebet_opp) FILTER (
                 WHERE
                     defender_pos = 0
-            ) AS vs_fourbet_btn_opp,
+            ) AS btn_vs_fourbet_opp,
             SUM(fivebet_opp) FILTER (
                 WHERE
                     defender_pos = 9
-            ) AS vs_fourbet_sb_opp,
+            ) AS sb_vs_fourbet_opp,
             SUM(fivebet_opp) FILTER (
                 WHERE
                     defender_pos = 8
-            ) AS vs_fourbet_bb_opp
+            ) AS bb_vs_fourbet_opp
         FROM
             pop.mv_player_response_vs_fourbet_counts
         GROUP BY
@@ -122,21 +122,21 @@ SELECT
     COALESCE(r.rfi_co_opp, 0) AS rfi_co_opp,
     COALESCE(r.rfi_btn_opp, 0) AS rfi_btn_opp,
     COALESCE(r.rfi_sb_opp, 0) AS rfi_sb_opp,
-    COALESCE(o.vs_open_lj_opp, 0) AS vs_open_lj_opp,
-    COALESCE(o.vs_open_hj_opp, 0) AS vs_open_hj_opp,
-    COALESCE(o.vs_open_co_opp, 0) AS vs_open_co_opp,
-    COALESCE(o.vs_open_btn_opp, 0) AS vs_open_btn_opp,
-    COALESCE(o.vs_open_sb_opp, 0) AS vs_open_sb_opp,
-    COALESCE(t.vs_threebet_lj_opp, 0) AS vs_threebet_lj_opp,
-    COALESCE(t.vs_threebet_hj_opp, 0) AS vs_threebet_hj_opp,
-    COALESCE(t.vs_threebet_co_opp, 0) AS vs_threebet_co_opp,
-    COALESCE(t.vs_threebet_btn_opp, 0) AS vs_threebet_btn_opp,
-    COALESCE(t.vs_threebet_sb_opp, 0) AS vs_threebet_sb_opp,
-    COALESCE(f.vs_fourbet_hj_opp, 0) AS vs_fourbet_hj_opp,
-    COALESCE(f.vs_fourbet_co_opp, 0) AS vs_fourbet_co_opp,
-    COALESCE(f.vs_fourbet_btn_opp, 0) AS vs_fourbet_btn_opp,
-    COALESCE(f.vs_fourbet_sb_opp, 0) AS vs_fourbet_sb_opp,
-    COALESCE(f.vs_fourbet_bb_opp, 0) AS vs_fourbet_bb_opp
+    COALESCE(o.hj_vs_open_opp, 0) AS hj_vs_open_opp,
+    COALESCE(o.co_vs_open_opp, 0) AS co_vs_open_opp,
+    COALESCE(o.btn_vs_open_opp, 0) AS btn_vs_open_opp,
+    COALESCE(o.sb_vs_open_opp, 0) AS sb_vs_open_opp,
+    COALESCE(o.bb_vs_open_opp, 0) AS bb_vs_open_opp,
+    COALESCE(t.lj_vs_threebet_opp, 0) AS lj_vs_threebet_opp,
+    COALESCE(t.hj_vs_threebet_opp, 0) AS hj_vs_threebet_opp,
+    COALESCE(t.co_vs_threebet_opp, 0) AS co_vs_threebet_opp,
+    COALESCE(t.btn_vs_threebet_opp, 0) AS btn_vs_threebet_opp,
+    COALESCE(t.sb_vs_threebet_opp, 0) AS sb_vs_threebet_opp,
+    COALESCE(f.hj_vs_fourbet_opp, 0) AS hj_vs_fourbet_opp,
+    COALESCE(f.co_vs_fourbet_opp, 0) AS co_vs_fourbet_opp,
+    COALESCE(f.btn_vs_fourbet_opp, 0) AS btn_vs_fourbet_opp,
+    COALESCE(f.sb_vs_fourbet_opp, 0) AS sb_vs_fourbet_opp,
+    COALESCE(f.bb_vs_fourbet_opp, 0) AS bb_vs_fourbet_opp
 FROM
     rfi r
     FULL OUTER JOIN open_resp o ON o.id_limit = r.id_limit

@@ -1,2 +1,2 @@
 \set ON_ERROR_STOP on
-\i ops/refresh_mvs.sql
+CALL pop.refresh_population_views();

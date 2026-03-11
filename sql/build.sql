@@ -55,3 +55,7 @@
 
 \i sql/20_views/v_population_opportunity_counts.sql
 \i sql/20_views/v_population_preflop.sql
+
+\echo ===== Building app-facing database API =====
+\i sql/30_functions/refresh_population_views.sql
+\i sql/30_functions/get_population_preflop.sql
