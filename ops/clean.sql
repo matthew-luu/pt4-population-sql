@@ -1,3 +1,8 @@
+--Functions and Stored Procedures
+DROP FUNCTION IF EXISTS pop.get_population_preflop;
+
+DROP PROCEDURE IF EXISTS pop.refresh_population_views;
+
 --Poulation Views
 DROP VIEW IF EXISTS pop.v_population_preflop;
 
