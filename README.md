@@ -31,7 +31,8 @@ Population counts and frequencies
         ↓
 Exported dataset
 ```
-This repository does not generate exploit strategies directly.
+
+This repository does **not** generate exploit strategies directly.  
 Its job is to produce clean, reproducible population statistics.
 
 ---
@@ -64,9 +65,11 @@ opportunities: 120384
 ## Relationship to the Companion Repository
 
 This repository generates the population dataset consumed by:
-`pt4-population-csharp`
+
+**`pt4-population-csharp`**
 
 That repository performs:
+
 - range approximation
 - EV calculation
 - exploit strategy generation
@@ -76,7 +79,7 @@ That repository performs:
 
 ## Documentation
 
-Detailed documentation is available in docs/:
+Detailed documentation is available in `docs/`:
 
 - `docs/overview.md`
 - `docs/architecture.md`
@@ -88,6 +91,7 @@ Detailed documentation is available in docs/:
 ---
 
 ## High-Level System View
+
 ```text
 PokerTracker4 Database
         ↓
@@ -100,3 +104,25 @@ pt4-population-csharp
 Exploit Strategy Output
 ```
 
+---
+
+## Intended Audience
+
+This repository documentation is useful for:
+
+- developers extending the SQL pipeline
+- anyone validating the population statistics
+- users who want to understand how the dataset is built
+- employers reviewing the data-engineering side of the project
+
+---
+
+## Future Work
+
+Potential future improvements include:
+
+- additional node families
+- better abstraction of repeated SQL patterns
+- more export formats
+- broader validation tooling
+- improved documentation of PT4 table dependencies
