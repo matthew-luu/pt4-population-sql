@@ -64,7 +64,7 @@ opportunities: 120384
 ## Relationship to the Companion Repository
 
 This repository generates the population dataset consumed by:
-'pt4-population-csharp'
+`pt4-population-csharp`
 
 That repository performs:
 - range approximation
@@ -78,12 +78,12 @@ That repository performs:
 
 Detailed documentation is available in docs/:
 
-- 'docs/overview.md'
-- 'docs/architecture.md'
-- 'docs/data-pipeline.md'
-- 'docs/population-model.md'
-- 'docs/schema.md'
-- 'docs/usage.md'
+- `docs/overview.md`
+- `docs/architecture.md`
+- `docs/data-pipeline.md`
+- `docs/population-model.md`
+- `docs/schema.md`
+- `docs/usage.md`
 
 ---
 
