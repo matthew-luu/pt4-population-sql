@@ -9,14 +9,7 @@ SELECT
 
     COUNT(*) FILTER (
         WHERE
-            s.flg_p_4bet_opp
-            AND (
-                NOT s.flg_p_3bet_def_opp
-                OR (
-                    s.enum_p_3bet_action SIMILAR TO '(C|R)'
-                    AND s.flg_p_4bet_def_opp
-                )
-            )
+            s.flg_p_4bet_def_opp
     ) AS fivebet_opp,
 
     COUNT(*) FILTER (
